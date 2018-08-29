@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <head> <meta name="viewport" content="width=device-width, user-scalable=no" /></head>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.squareui.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+<style type="text/css">
+    a.fancybox img {
+        border: none;
+        box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+        -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+    } 
+    a.fancybox:hover img {
+        position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
+    }
+</style>
+  
+  
+  
+  
+</head>
+<style>
+
+#t {
+    text-align: justify;
+    line-height: 1.5;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #000 #000;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-radius: 0px;
+	font-size: 16px;
+    padding: 8px 12px 8px 12px;
+    background-image: "gambar/paper.png"
+	font-family: "Trebuchet MS, Helvetica, sans-serif"
+}
+
+#t h1 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-style: solid;
+    border-bottom: double #666;
+    border-top: double;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: none;
+    border-radius: 0px;
+    line-height: 1;
+    font-family: "georgia"
+}
+
+
+#t h3 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 20px;
+	color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    border-style: solid;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: #E76E66;
+    border-radius: 0px;
+    line-height: 1;
+    font-family: "arial"
+	
+}
+
+
+
+#t h2 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-style: solid;
+    border-bottom: double #666;
+    border-top: double;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: none;
+    border-radius: 0px;
+    line-height: 1;
+    font-family: "georgia"
+}
+
+#t h4 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-style: solid;
+    border-bottom: double #666;
+    border-top: double;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: none;
+    border-radius: 0px;
+    line-height: 1;
+}
+
+.arab {
+    font-size: 25px!important;
+    line-height: 46px!important;
+    font-family: "Times New Roman", Tahoma, sans-serif;
+    font-weight: normal;
+    text-align: right;
+    direction: rtl;
+}
+
+.my-wrapper {
+    padding-top: 30px;
+}
+
+.my-wrapper form {
+    position: fixed;
+    top: 0px;
+    left: 15px;
+    min-width: 95%;
+	padding-right: 25px;
+    z-index: 2;
+}
+
+.wrap {
+    white-space: normal !important;
+}
+
+p {
+    text-indent: 0%;
+}
+
+.c {
+    text-align: center;
+}
+
+.effect8 {
+    position: relative;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect8:before,
+.effect8:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+}
+
+.effect8:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+	max-width: 105%;
+	vertical-align: middle;
+	horizontal-align: left;
+	height: auto;
+	
+}
+
+
+.image {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+	position:absolute;
+    top:0;
+    bottom:0;
+	left:5px;
+    margin:auto;
+}
+
+@media screen and (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block;
+	
+    }
+	
+	
+	td, th {
+  border: 1px solid #999;
+  padding: 0.3rem;
+}
+}
+
+
+ol {
+	counter-reset:li; /* Initiate a counter */
+	margin-left:0; /* Remove the default left margin */
+	padding-left:0; /* Remove the default left padding */
+}
+ol > li {
+	position:relative; /* Create a positioning context */
+	margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+	padding:4px 8px; /* Add some spacing around the content */
+	list-style:none; /* Disable the normal item numbering */
+	border-top:2px solid #666;
+	background:#f6f6f6;
+}
+ol > li:before {
+	content:counter(li); /* Use the counter as content */
+	counter-increment:li; /* Increment the counter by 1 */
+	/* Position and style the number */
+	position:absolute;
+	top:-2px;
+	left:-2em;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	width:2em;
+	/* Some space between the number and the content in browsers that support
+	   generated content but not positioning it (Camino 2 is one example) */
+	margin-right:8px;
+	padding:4px;
+	border-top:2px solid #666;
+	color:#fff;
+	background:#666;
+	font-weight:bold;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	text-align:center;
+}
+li ol,
+li ul {margin-top:6px;}
+ol ol li:last-child {margin-bottom:0;}
+
+.wrap2 {
+    white-space: normal !important;
+	text-align: right;
+}
+
+
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ background:#f8f8f8;
+ font-size: 13px;
+     overflow: auto;
+}
+
+
+</style>
+
+<body>
+
+
+<div data-role="page" id="pageone">
+  <div data-role="content">
+  <div class="my-wrapper" >
+    <ul data-role="listview" data-autodividers="false" data-inset="true" data-filter="true" data-theme="c" data-filter-placeholder="Find Tutorial" data-filter-theme="e">
+
+<li><a href="#eps1" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Home</h2><p class="wrap">Tutorial Home</p></a></li>
+<li><a href="#eps2" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Overview</h2><p class="wrap">Tutorial Overview</p></a></li>
+<li><a href="#eps3" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Hacker Types</h2><p class="wrap">Tutorial Hacker Types</p></a></li>
+<li><a href="#eps4" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Famous Hackers</h2><p class="wrap">Tutorial Famous Hackers</p></a></li>
+<li><a href="#eps5" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Terminologies</h2><p class="wrap">Tutorial Terminologies</p></a></li>
+<li><a href="#eps6" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Tools</h2><p class="wrap">Tutorial Tools</p></a></li>
+<li><a href="#eps7" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Skills</h2><p class="wrap">Tutorial Skills</p></a></li>
+<li><a href="#eps8" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Process</h2><p class="wrap">Tutorial Process</p></a></li>
+<li><a href="#eps9" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Reconnaissance</h2><p class="wrap">Tutorial Reconnaissance</p></a></li>
+<li><a href="#eps10" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Footprinting</h2><p class="wrap">Tutorial Footprinting</p></a></li>
+<li><a href="#eps11" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Fingerprinting</h2><p class="wrap">Tutorial Fingerprinting</p></a></li>
+<li><a href="#eps12" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Sniffing</h2><p class="wrap">Tutorial Sniffing</p></a></li>
+<li><a href="#eps13" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Sniffing Tools</h2><p class="wrap">Tutorial Sniffing Tools</p></a></li>
+<li><a href="#eps14" data-transition="flow"><img src="icon/icon.png" class="image"><h2>ARP Poisoning</h2><p class="wrap">Tutorial Arp Poisoning</p></a></li>
+<li><a href="#eps15" data-transition="flow"><img src="icon/icon.png" class="image"><h2>DNS Poisoning</h2><p class="wrap">Tutorial Dns Poisoning</p></a></li>
+<li><a href="#eps16" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Exploitation</h2><p class="wrap">Tutorial Exploitation</p></a></li>
+<li><a href="#eps17" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Enumeration</h2><p class="wrap">Tutorial Enumeration</p></a></li>
+<li><a href="#eps18" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Metasploit</h2><p class="wrap">Tutorial Metasploit</p></a></li>
+<li><a href="#eps19" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Trojan Attacks</h2><p class="wrap">Tutorial Trojan Attacks</p></a></li>
+<li><a href="#eps20" data-transition="flow"><img src="icon/icon.png" class="image"><h2>TCP/IP Hijacking</h2><p class="wrap">Tutorial Tcp/Ip Hijacking</p></a></li>
+<li><a href="#eps21" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Email Hijacking</h2><p class="wrap">Tutorial Email Hijacking</p></a></li>
+<li><a href="#eps22" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Password Hacking</h2><p class="wrap">Tutorial Password Hacking</p></a></li>
+<li><a href="#eps23" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Wireless Hacking</h2><p class="wrap">Tutorial Wireless Hacking</p></a></li>
+<li><a href="#eps24" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Social Engineering</h2><p class="wrap">Tutorial Social Engineering</p></a></li>
+<li><a href="#eps25" data-transition="flow"><img src="icon/icon.png" class="image"><h2>DDOS Attacks</h2><p class="wrap">Tutorial Ddos Attacks</p></a></li>
+<li><a href="#eps26" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Cross Site Scripting</h2><p class="wrap">Tutorial Cross Site Scripting</p></a></li>
+<li><a href="#eps27" data-transition="flow"><img src="icon/icon.png" class="image"><h2>SQL Injection</h2><p class="wrap">Tutorial Sql Injection</p></a></li>
+<li><a href="#eps28" data-transition="flow"><img src="icon/icon.png" class="image"><h2>Pen Testing</h2><p class="wrap">Tutorial Pen Testing</p></a></li>
+
+
+		
+</ul>
+  </div> </div>
+</div>  	
+
+
+
+<div data-role="page" id="eps1" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+		
+<h1>Ethical Hacking Tutorial</h1><div><div><div><div><div><p>Hacking has been a part of computing for almost five decades and it is a very broad discipline, which covers a wide range of topics. The first known event of hacking had taken place in 1960 at MIT and at the same time, the term "Hacker" was originated. In this tutorial, we will take you through the various concepts of Ethical Hacking and explain how you can use them in a real-time environment.</p><h1>Audience</h1><p>This tutorial has been prepared for professionals aspiring to learn the basics of Ethical Hacking and make a career as an ethical hacker.</p><h1>Prerequisites</h1><p>Before proceeding with this tutorial, you should have a good grasp over all the fundamental concepts of a computer and how it operates in a networked environment.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+<div data-role="page" id="eps2" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Overview</h1>		
+<div><div><div><div><div>Hacking has been a part of computing for almost five decades and it is a very broad discipline, which covers a wide range of topics. The first known event of hacking had taken place in 1960 at MIT and at the same time, the term "Hacker" was originated.<p>Hacking is the act of finding the possible entry points that exist in a computer system or a computer network and finally entering into them. Hacking is usually done to gain unauthorized access to a computer system or a computer network, either to harm the systems or to steal sensitive information available on the computer.</p><p>Hacking is usually legal as long as it is being done to find weaknesses in a computer or network system for testing purpose. This sort of hacking is what we call <strong>Ethical Hacking</strong>.</p><p>A computer expert who does the act of hacking is called a "Hacker". Hackers are those who seek knowledge, to understand how systems operate, how they are designed, and then attempt to play with these systems.</p><h2>Types of Hacking</h2><p>We can segregate hacking into different categories, based on what is being hacked. Here is a set of examples &minus;</p><ul><li><p><strong>Website Hacking</strong> &minus; Hacking a website means taking unauthorized control over a web server and its associated software such as databases and other interfaces.</p></li><li><p><strong>Network Hacking</strong> &minus; Hacking a network means gathering information about a network by using tools like Telnet, NS lookup, Ping, Tracert, Netstat, etc. with the intent to harm the network system and hamper its operation.</p></li><li><p><strong>Email Hacking</strong> &minus; It includes getting unauthorized access on an Email account and using it without taking the consent of its owner.</p></li><li><p><strong>Ethical Hacking</strong> &minus; Ethical hacking involves finding weaknesses in a computer or network system for testing purpose and finally getting them fixed.</p></li><li><p><strong>Password Hacking</strong> &minus; This is the process of recovering secret passwords from data that has been stored in or transmitted by a computer system.</p></li><li><p><strong>Computer Hacking</strong> &minus; This is the process of stealing computer ID and password by applying hacking methods and getting unauthorized access to a computer system.</p></li></ul><h2>Advantages of Hacking</h2><p>Hacking is quite useful in the following scenarios &minus;</p><ul><li><p>To recover lost information, especially in case you lost your password.</p></li><li><p>To perform penetration testing to strengthen computer and network security.</p></li><li><p>To put adequate preventative measures in place to prevent security breaches.</p></li><li><p>To have a computer system that prevents malicious hackers from gaining access.</p></li></ul><h2>Disadvantages of Hacking</h2><p>Hacking is quite dangerous if it is done with harmful intent. It can cause &minus;</p><ul><li><p>Massive security breach.</p></li><li><p>Unauthorized system access on private information.</p></li><li><p>Privacy violation.</p></li><li><p>Hampering system operation.</p></li><li><p>Denial of service attacks.</p></li><li><p>Malicious attack on the system.</p></li></ul><h2>Purpose of Hacking</h2><p>There could be various positive and negative intentions behind performing hacking activities. Here is a list of some probable reasons why people indulge in hacking activities &minus;</p><ul><li><p>Just for fun</p></li><li><p>Show-off</p></li><li><p>Steal important information</p></li><li><p>Damaging the system</p></li><li><p>Hampering privacy</p></li><li><p>Money extortion</p></li><li><p>System security testing</p></li><li><p>To break policy compliance</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+	
+	
+<div data-role="page" id="eps3" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Hacker Types</h1><h1>Overview</h1>		
+<div><div><div><div><div><div><div><div><div><div>Hackers can be classified into different categories such as white hat, black hat, and grey hat, based on their intent of hacking a system. These different terms come from old Spaghetti Westerns, where the bad guy wears a black cowboy hat and the good guy wears a white hat.<h2>White Hat Hackers</h2><p>White Hat hackers are also known as <strong>Ethical Hackers</strong>. They never intent to harm a system, rather they try to find out weaknesses in a computer or a network system as a part of penetration testing and vulnerability assessments.</p><p>Ethical hacking is not illegal and it is one of the demanding jobs available in the IT industry. There are numerous companies that hire ethical hackers for penetration testing and vulnerability assessments.</p><h2>Black Hat Hackers</h2><p>Black Hat hackers, also known as <strong>crackers</strong>, are those who hack in order to gain unauthorized access to a system and harm its operations or steal sensitive information.</p><p>Black Hat hacking is always illegal because of its bad intent which includes stealing corporate data, violating privacy, damaging the system, blocking network communication, etc.</p><h2>Grey Hat Hackers</h2><p>Grey hat hackers are a blend of both black hat and white hat hackers. They act without malicious intent but for their fun, they exploit a security weakness in a computer system or network without the owner&rsquo;s permission or knowledge.</p><p>Their intent is to bring the weakness to the attention of the owners and getting appreciation or a little bounty from the owners.</p><h2>Miscellaneous Hackers</h2><p>Apart from the above well-known classes of hackers, we have the following categories of hackers based on what they hack and how they do it &minus;</p><h3>Red Hat Hackers</h3><p>Red hat hackers are again a blend of both black hat and white hat hackers. They are usually on the level of hacking government agencies, top-secret information hubs, and generally anything that falls under the category of sensitive information.</p><h3>Blue Hat Hackers</h3><p>A blue hat hacker is someone outside computer security consulting firms who is used to bug-test a system prior to its launch. They look for loopholes that can be exploited and try to close these gaps. Microsoft also uses the term <strong>BlueHat</strong> to represent a series of security briefing events.</p><h3>Elite Hackers</h3><p>This is a social status among hackers, which is used to describe the most skilled. Newly discovered exploits will circulate among these hackers.</p><h3>Script Kiddie</h3><p>A script kiddie is a non-expert who breaks into computer systems by using pre-packaged automated tools written by others, usually with little understanding of the underlying concept, hence the term <strong>Kiddie</strong>.</p><h3>Neophyte</h3><p>A neophyte, "n00b", or "newbie" or "Green Hat Hacker" is someone who is new to hacking or phreaking and has almost no knowledge or experience of the workings of technology and hacking.</p><h3>Hacktivist</h3><p>A hacktivist is a hacker who utilizes technology to announce a social, ideological, religious, or political message. In general, most hacktivism involves website defacement or denialof-service attacks.</p></div></div></div></div></div></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+	
+	
+<div data-role="page" id="eps4" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Famous Hackers</h1>
+<div><div><div><div><div>In this chapter, we will have a brief synopsis of some of the famous Hackers and how they became famous.<h2>Jonathan James</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/jonathan_james.jpg" alt="" /><p>Jonathan James was an American hacker, illfamous as the first juvenile sent to prison for cybercrime in United States. He committed suicide in 2008 of a self-inflicted gunshot wound.</p><p>In 1999, at the age of 16, he gained access to several computers by breaking the password of a server that belonged to NASA and stole the source code of the International Space Station among other sensitive information.</p><h2>Ian Murphy</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/ian_murphy.jpg" alt="" /><p>Ian Murphy, also known as Captain Zap, at one point of time was having high school students steal computer equipment for him. Ian selfproclaims to have been "the first hacker ever convicted of a crime".</p><p>Ian's career as a master hacker was fabricated in 1986 after he and his unemployed wife decided to form some type of business.</p><p>He has a long history of computer and Internet frauds. One of his favourite games is to forge Email headers and to send out third-party threat letters.</p><h2>Kevin Mitnick</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/kevin_mitnick.jpg" alt="" /><p>Kevin Mitnick is a computer security consultant and author, who infiltrates his clients&rsquo; companies to expose their security strengths, weaknesses, and potential loopholes.</p><p>He is the first hacker to have his face immortalized on an FBI "Most Wanted" poster. He was formerly the most wanted computer criminal in the history of United States.</p><p>From the 1970s up until his last arrest in 1995, he skilfully bypassed corporate security safeguards, and found his way into some of the most well-guarded systems such as Sun Microsystems, Digital Equipment Corporation, Motorola, Netcom, and Nokia.</p><h2>Mark Abene</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/mark_abene.jpg" alt="" /><p>Mark Abene, known around the world by his pseudonym Phiber Optik, is an information security expert and entrepreneur. He was a high-profile hacker in the 1980s and early 1990s. He was one of the first hackers to openly debate and defend the positive merits of ethical hacking as a beneficial tool to industry.</p><p>His expertise spreads across penetration studies, on-site security assessments, secure code reviews, security policy review and generation, systems and network architecture, systems administration and network management, among many others. His clientele includes American Express, UBS, First USA, Ernst &amp; Young, KPMG and others.</p><h2>Johan Helsinguis</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/johan_helsinguis.jpg" alt="" /><p>Johan Helsingius, better known as Julf, came into the limelight in the 1980s when he started operating the world's most popular anonymous remailer, called penet.fi.</p><p>Johan was also responsible for product development for the first Pan-European internet service provider, Eunet International.</p><p>He is at present, a member of the board of Technologia Incognita, a hackerspace association in Amsterdam, and supports the communication companies worldwide with his cyber knowledge.</p><h2>Linus Torvalds</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/linus_torvalds.jpg" alt="" /><p>Linus Torvalds is known as one of the best hackers of all time. He rose to fame by creating Linux, the very popular Unix-based operating system. Linux is open source and thousands of developers have contributed to its Kernel. However, Torvalds remains the ultimate authority on what new code is incorporated into the standard Linux kernel. As of 2006, approximately two percent of the Linux kernel was written by Torvalds himself.</p><p>He just aspires to be simple and have fun by making the world&rsquo;s best operating system. Torvalds has received honorary doctorates from Stockholm University and University of Helsinki.</p><h2>Robert Morris</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/robert_morris.jpg" alt="" /><p>Robert Morris, known as the creator of the Morris Worm, the first computer worm to be unleashed on the Internet. The worm had the capability to slow down computers and make them no longer usable. As a result of this, he was sentenced to three years&rsquo; probation, 400 hours of community service and also had to pay a penalty amount of $10,500.</p><p>Morris is currently working as a tenured professor at the MIT Computer Science and Artificial Intelligence Laboratory.</p><h2>Gary McKinnon</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/gary_mckinnon.jpg" alt="" /><p>Gary McKinnon is a renowned systems administrator and hacker. He was famously accused of the &ldquo;biggest military computer hack of all time&rdquo;. He had successfully hacked the networks of Army, Air Force, Navy and NASA systems of the United States government.</p><p>In his statements to the media, he has often mentioned that his motivation was only to find evidence of UFOs, antigravity technology, and the suppression of &ldquo;free energy&rdquo; that could potentially be useful to the public.</p><h2>Kevin Poulsen</h2><img src="https://www.tutorialspoint.com/ethical_hacking/images/kevin_poulsen.jpg" alt="" /><p>Kevin Poulsen, also known as <strong>Dark Dante</strong>, became famous for his notoriety when he took over all the telephone lines of Los Angeles radio station KIIS-FM, guaranteeing that he would be the 102nd caller and win the prize of a Porsche 944 S2.</p><p>Poulsen also drew the ire of FBI, when he hacked into federal computers for wiretap information, for which he had to serve a sentence of five years. He has reinvented himself as a journalist and has carved a niche for himself in this field.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps5" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Terminologies</h1>
+<div><div><div><div><div>Following is a list of important terms used in the field of hacking.<ul><li><p><strong>Adware</strong> &minus; Adware is software designed to force pre-chosen ads to display on your system.</p></li><li><p><strong>Attack</strong> &minus; An attack is an action that is done on a system to get its access and extract sensitive data.</p></li><li><p><strong>Back door</strong> &minus; A back door, or trap door, is a hidden entry to a computing device or software that bypasses security measures, such as logins and password protections.</p></li><li><p><strong>Bot</strong> &minus; A bot is a program that automates an action so that it can be done repeatedly at a much higher rate for a more sustained period than a human operator could do it. For example, sending HTTP, FTP or Telnet at a higher rate or calling script to create objects at a higher rate.</p></li><li><p><strong>Botnet</strong> &minus; A botnet, also known as zombie army, is a group of computers controlled without their owners&rsquo; knowledge. Botnets are used to send spam or make denial of service attacks.</p></li><li><p><strong>Brute force attack</strong> &minus; A brute force attack is an automated and the simplest kind of method to gain access to a system or website. It tries different combination of usernames and passwords, over and over again, until it gets in.</p></li><li><p><strong>Buffer Overflow</strong> &minus; Buffer Overflow is a flaw that occurs when more data is written to a block of memory, or buffer, than the buffer is allocated to hold.</p></li><li><p><strong>Clone phishing</strong> &minus; Clone phishing is the modification of an existing, legitimate email with a false link to trick the recipient into providing personal information.</p></li><li><p><strong>Cracker</strong> &minus; A cracker is one who modifies the software to access the features which are considered undesirable by the person cracking the software, especially copy protection features.</p></li><li><p><strong>Denial of service attack (DoS)</strong> &minus; A denial of service (DoS) attack is a malicious attempt to make a server or a network resource unavailable to users, usually by temporarily interrupting or suspending the services of a host connected to the Internet.</p></li><li><p><strong>DDoS</strong> &minus; Distributed denial of service attack.</p></li><li><p><strong>Exploit Kit</strong> &minus; An exploit kit is software system designed to run on web servers, with the purpose of identifying software vulnerabilities in client machines communicating with it and exploiting discovered vulnerabilities to upload and execute malicious code on the client.</p></li><li><p><strong>Exploit</strong> &minus; Exploit is a piece of software, a chunk of data, or a sequence of commands that takes advantage of a bug or vulnerability to compromise the security of a computer or network system.</p></li><li><p><strong>Firewall</strong> &minus; A firewall is a filter designed to keep unwanted intruders outside a computer system or network while allowing safe communication between systems and users on the inside of the firewall.</p></li><li><p><strong>Keystroke logging</strong> &minus; Keystroke logging is the process of tracking the keys which are pressed on a computer (and which touchscreen points are used). It is simply the map of a computer/human interface. It is used by gray and black hat hackers to record login IDs and passwords. Keyloggers are usually secreted onto a device using a Trojan delivered by a phishing email.</p></li><li><p><strong>Logic bomb</strong> &minus; A virus secreted into a system that triggers a malicious action when certain conditions are met. The most common version is the time bomb.</p></li><li><p><strong>Malware</strong> &minus; Malware is an umbrella term used to refer to a variety of forms of hostile or intrusive software, including computer viruses, worms, Trojan horses, ransomware, spyware, adware, scareware, and other malicious programs.</p></li><li><p><strong>Master Program</strong> &minus; A master program is the program a black hat hacker uses to remotely transmit commands to infected zombie drones, normally to carry out Denial of Service attacks or spam attacks.</p></li><li><p><strong>Phishing</strong> &minus; Phishing is an e-mail fraud method in which the perpetrator sends out legitimate-looking emails, in an attempt to gather personal and financial information from recipients.</p></li><li><p><strong>Phreaker</strong> &minus; Phreakers are considered the original computer hackers and they are those who break into the telephone network illegally, typically to make free longdistance phone calls or to tap phone lines.</p></li><li><p><strong>Rootkit</strong> &minus; Rootkit is a stealthy type of software, typically malicious, designed to hide the existence of certain processes or programs from normal methods of detection and enable continued privileged access to a computer.</p></li><li><p><strong>Shrink Wrap code</strong> &minus; A Shrink Wrap code attack is an act of exploiting holes in unpatched or poorly configured software.</p></li><li><p><strong>Social engineering</strong> &minus; Social engineering implies deceiving someone with the purpose of acquiring sensitive and personal information, like credit card details or user names and passwords.</p></li><li><p><strong>Spam</strong> &minus; A Spam is simply an unsolicited email, also known as junk email, sent to a large number of recipients without their consent.</p></li><li><p><strong>Spoofing</strong> &minus; Spoofing is a technique used to gain unauthorized access to computers, whereby the intruder sends messages to a computer with an IP address indicating that the message is coming from a trusted host.</p></li><li><p><strong>Spyware</strong> &minus; Spyware is software that aims to gather information about a person or organization without their knowledge and that may send such information to another entity without the consumer's consent, or that asserts control over a computer without the consumer's knowledge.</p></li><li><p><strong>SQL Injection</strong> &minus; SQL injection is an SQL code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker).</p></li><li><p><strong>Threat</strong> &minus; A threat is a possible danger that can exploit an existing bug or vulnerability to compromise the security of a computer or network system.</p></li><li><p><strong>Trojan</strong> &minus; A Trojan, or Trojan Horse, is a malicious program disguised to look like a valid program, making it difficult to distinguish from programs that are supposed to be there designed with an intention to destroy files, alter information, steal passwords or other information.</p></li><li><p><strong>Virus</strong> &minus; A virus is a malicious program or a piece of code which is capable of copying itself and typically has a detrimental effect, such as corrupting the system or destroying data.</p></li><li><p><strong>Vulnerability</strong> &minus; A vulnerability is a weakness which allows a hacker to compromise the security of a computer or network system.</p></li><li><p><strong>Worms</strong> &minus; A worm is a self-replicating virus that does not alter files but resides in active memory and duplicates itself.</p></li><li><p><strong>Cross-site Scripting</strong> &minus; Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications. XSS enables attackers to inject client-side script into web pages viewed by other users.</p></li><li><p><strong>Zombie Drone</strong> &minus; A Zombie Drone is defined as a hi-jacked computer that is being used anonymously as a soldier or 'drone' for malicious activity, for example, distributing unwanted spam e-mails.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps6" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Tools</h1>
+<div><div><div><div><div>In this chapter, we will discuss in brief some of famous tools that are widely used to prevent hacking and getting unauthorized access to a computer or network system.<h2>NMAP</h2><p>Nmap stands for Network Mapper. It is an open source tool that is used widely for network discovery and security auditing. Nmap was originally designed to scan large networks, but it can work equally well for single hosts. Network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime.</p><p>Nmap uses raw IP packets to determine &minus;</p><ul><li><p>what hosts are available on the network,</p></li><li><p>what services those hosts are offering,</p></li><li><p>what operating systems they are running on,</p></li><li><p>what type of firewalls are in use, and other such characteristics.</p></li></ul><p>Nmap runs on all major computer operating systems such as Windows, Mac OS X, and Linux.</p><h2>Metasploit</h2><p>Metasploit is one of the most powerful exploit tools. It&rsquo;s a product of Rapid7 and most of its resources can be found at: www.metasploit.com. It comes in two versions &minus; <strong>commercial</strong> and <strong>free edition</strong>. Matasploit can be used with command prompt or with Web UI.</p><p>With Metasploit, you can perform the following operations &minus;</p><ul><li><p>Conduct basic penetration tests on small networks</p></li><li><p>Run spot checks on the exploitability of vulnerabilities</p></li><li><p>Discover the network or import scan data</p></li><li><p>Browse exploit modules and run individual exploits on hosts</p></li></ul><h2>Burp Suit</h2><p>Burp Suite is a popular platform that is widely used for performing security testing of web applications. It has various tools that work in collaboration to support the entire testing process, from initial mapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities.</p><p>Burp is easy to use and provides the administrators full control to combine advanced manual techniques with automation for efficient testing. Burp can be easily configured and it contains features to assist even the most experienced testers with their work.</p><h2>Angry IP Scanner</h2><p>Angry IP scanner is a lightweight, cross-platform IP address and port scanner. It can scan IP addresses in any range. It can be freely copied and used anywhere. In order to increase the scanning speed, it uses multithreaded approach, wherein a separate scanning thread is created for each scanned IP address.</p><p>Angry IP Scanner simply pings each IP address to check if it&rsquo;s alive, and then, it resolves its hostname, determines the MAC address, scans ports, etc. The amount of gathered data about each host can be saved to TXT, XML, CSV, or IP-Port list files. With help of plugins, Angry IP Scanner can gather any information about scanned IPs.</p><h2>Cain &amp; Abel</h2><p>Cain &amp; Abel is a password recovery tool for Microsoft Operating Systems. It helps in easy recovery of various kinds of passwords by employing any of the following methods &minus;</p><ul><li><p>sniffing the network,</p></li><li><p>cracking encrypted passwords using Dictionary, Brute-Force and Cryptanalysis attacks,</p></li><li><p>recording VoIP conversations,</p></li><li><p>decoding scrambled passwords,</p></li><li><p>recovering wireless network keys,</p></li><li><p>revealing password boxes,</p></li><li><p>uncovering cached passwords and analyzing routing protocols.</p></li></ul><p>Cain &amp; Abel is a useful tool for security consultants, professional penetration testers and everyone else who plans to use it for ethical reasons.</p><h2>Ettercap</h2><p>Ettercap stands for Ethernet Capture. It is a network security tool for Man-in-the-Middle attacks. It features sniffing of live connections, content filtering on the fly and many other interesting tricks. Ettercap has inbuilt features for network and host analysis. It supports active and passive dissection of many protocols.</p><p>You can run Ettercap on all the popular operating systems such as Windows, Linux, and Mac OS X.</p><h2>EtherPeek</h2><p>EtherPeek is a wonderful tool that simplifies network analysis in a multiprotocol heterogeneous network environment. EtherPeek is a small tool (less than 2 MB) that can be easily installed in a matter of few minutes.</p><p>EtherPeek proactively sniffs traffic packets on a network. By default, EtherPeek supports protocols such as AppleTalk, IP, IP Address Resolution Protocol (ARP), NetWare, TCP, UDP, NetBEUI, and NBT packets.</p><h2>SuperScan</h2><p>SuperScan is a powerful tool for network administrators to scan TCP ports and resolve hostnames. It has a user friendly interface that you can use to &minus;</p><ul><li><p>Perform ping scans and port scans using any IP range.</p></li><li><p>Scan any port range from a built-in list or any given range.</p></li><li><p>View responses from connected hosts.</p></li><li><p>Modify the port list and port descriptions using the built in editor.</p></li><li><p>Merge port lists to build new ones.</p></li><li><p>Connect to any discovered open port.</p></li><li><p>Assign a custom helper application to any port.</p></li></ul><h2>QualysGuard</h2><p>QualysGuard is an integrated suite of tools that can be utilized to simplify security operations and lower the cost of compliance. It delivers critical security intelligence on demand and automates the full spectrum of auditing, compliance and protection for IT systems and web applications.</p><p>QualysGuard includes a set of tools that can monitor, detect, and protect your global network.</p><h2>WebInspect</h2><p>WebInspect is a web application security assessment tool that helps identify known and unknown vulnerabilities within the Web application layer.</p><p>It can also help check that a Web server is configured properly, and attempts common web attacks such as parameter injection, cross-site scripting, directory traversal, and more.</p><h2>LC4</h2><p>LC4 was formerly known as <strong>L0phtCrack</strong>. It is a password auditing and recovery application. It is used to test password strength and sometimes to recover lost Microsoft Windows passwords, by using dictionary, brute-force, and hybrid attacks.</p><p>LC4 recovers Windows user account passwords to streamline migration of users to another authentication system or to access accounts whose passwords are lost.</p><h2>LANguard Network Security Scanner</h2><p>LANguard Network Scanner monitors a network by scanning connected machines and providing information about each node. You can obtain information about each individual operating system.</p><p>It can also detect registry issues and have a report set up in HTML format. For each computer, you can list the <strong>netbios</strong> name table, current logged-on user, and Mac address.</p><h2>Network Stumbler</h2><p>Network stumbler is a WiFi scanner and monitoring tool for Windows. It allows network professionals to detect WLANs. It is widely used by networking enthusiasts and hackers because it helps you find non-broadcasting wireless networks.</p><p>Network Stumbler can be used to verify if a network is well configured, its signal strength or coverage, and detect interference between one or more wireless networks. It can also be used to non-authorized connections.</p><h2>ToneLoc</h2><p>ToneLoc stands for Tone Locator. It was a popular war dialling computer program written for MS-DOS in the early 90&rsquo;s. War dialling is a technique of using a modem to automatically scan a list of telephone numbers, usually dialling every number in a local area code.</p><p>Malicious hackers use the resulting lists in breaching computer security - for guessing user accounts, or locating modems that might provide an entry-point into computer or other electronic systems.</p><p>It can be used by security personnel to detect unauthorized devices on a company&rsquo;s telephone network.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps7" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Skills</h1>
+<div><div><div><div><div>As an ethical hacker, you will need to understand various hacking techniques such as &minus;<ul><li>Password guessing and cracking</li><li>Session hijacking</li><li>Session spoofing</li><li>Network traffic sniffing</li><li>Denial of Service attacks</li><li>Exploiting buffer overflow vulnerabilities</li><li>SQL injection</li></ul><p>In this chapter, we will discuss some of the skills that you would require to become an expert in Ethical Hacking.</p><h2>Basic Skills</h2><p>Computer Hacking is a Science as well as an Art. Like any other expertise, you need to put a lot of effort in order to acquire knowledge and become an expert hacker. Once you are on the track, you would need more effort to keep up-to-date with latest technologies, new vulnerabilities and exploitation techniques.</p><ul><li><p>An ethical hacker must be a computer systems expert and needs to have very strong programming and computer networking skills.</p></li><li><p>An ethical hacker needs to have a lot of patience, persistence, and perseverance to try again and again and wait for the required result.</p></li></ul><p>Additionally, an ethical hacker should be smart enough to understand the situation and other users&rsquo; mind-set in order to apply social engineering exploits. A good ethical hacker has great problem-solving skills too.</p><h2>Courses &amp; Certifications</h2><p>This tutorial provides the basic guidelines to become a successful Ethical Hacker. If you want to excel in this field, then you might choose to pursue the following courses and certifications &minus;</p><ul><li><p>Obtain a bachelor&rsquo;s degree in Computer Science or A+ Certificate to gain an understanding of the most common hardware and software technologies.</p></li><li><p>Get into a programmer&rsquo;s role for a few years and then switch to get a tech support position.</p></li><li><p>Proceed to get network certifications like Network+ or CCNA and then security certifications like Security+, CISSP, or TICSA.</p></li><li><p>It is recommended that you get some work experience as a Network Engineer and System Administrator to understand networks and systems inside out.</p></li><li><p>Keep going through various books, tutorials and papers to understand various computer security aspects and take them as a challenge to secure your network and computer systems as network security engineer.</p></li><li><p>Study courses which cover creating Trojan horses, backdoors, viruses, and worms, denial of service (DoS) attacks, SQL injection, buffer overflow, session hijacking, and system hacking.</p></li><li><p>Master the art of penetration testing, footprinting and reconnaissance, and social engineering.</p></li><li><p>Finally go for a Certified Ethical Hacker (CEH) Certification.</p></li></ul><p>GIAC (Global Information Assurance Certification) and Offensive Security Certified Professional (OSCP) are additional IT security certifications which will add a lot of value to your profile.</p><h3>Final Note</h3><p>You need to stay as a White Hat Hacker which means you need to work within given boundaries. Never intrude or attack any computer or network without a required permission from the authorities.</p><p>As a final note, it is highly recommended that you refrain from engaging yourself in black hat hacking which may spoil your entire career.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps8" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Process</h1>
+<div><div><div><div><div>Like all good projects, ethical hacking too has a set of distinct phases. It helps hackers to make a structured ethical hacking attack.<p>Different security training manuals explain the process of ethical hacking in different ways, but for me as a Certified Ethical Hacker, the entire process can be categorized into the following six phases.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/ethical_hacking_process.jpg" alt="" /><h2>Reconnaissance</h2><p>Reconnaissance is the phase where the attacker gathers information about a target using active or passive means. The tools that are widely used in this process are NMAP, Hping, Maltego, and Google Dorks.</p><h2>Scanning</h2><p>In this process, the attacker begins to actively probe a target machine or network for vulnerabilities that can be exploited. The tools used in this process are Nessus, Nexpose, and NMAP.</p><h2>Gaining Access</h2><p>In this process, the vulnerability is located and you attempt to exploit it in order to enter into the system. The primary tool that is used in this process is Metasploit.</p><h2>Maintaining Access</h2><p>It is the process where the hacker has already gained access into a system. After gaining access, the hacker installs some backdoors in order to enter into the system when he needs access in this owned system in future. Metasploit is the preferred tool in this process.</p><h2>Clearing Tracks</h2><p>This process is actually an unethical activity. It has to do with the deletion of logs of all the activities that take place during the hacking process.</p><h2>Reporting</h2><p>Reporting is the last step of finishing the ethical hacking process. Here the Ethical Hacker compiles a report with his findings and the job that was done such as the tools used, the success rate, vulnerabilities found, and the exploit processes.</p><h2>Quick Tip</h2><p>The processes are not standard. You can adopt a set of different processes and tools according to your techniques that you are comfortable with. The process is of least significance as long as you are able to get the desired results.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps9" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Reconnaissance</h1>
+<div><div><div><div><div>Information Gathering and getting to know the target systems is the first process in ethical hacking. Reconnaissance is a set of processes and techniques (Footprinting, Scanning &amp; Enumeration) used to covertly discover and collect information about a target system.<p>During reconnaissance, an ethical hacker attempts to gather as much information about a target system as possible, following the seven steps listed below &minus;</p><ul><li>Gather initial information</li><li>Determine the network range</li><li>Identify active machines</li><li>Discover open ports and access points</li><li>Fingerprint the operating system</li><li>Uncover services on ports</li><li>Map the network</li></ul><p>We will discuss in detail all these steps in the subsequent chapters of this tutorial. Reconnaissance takes place in two parts &minus; <strong>Active Reconnaissance</strong> and <strong>Passive Reconnaissance</strong>.</p><h2>Active Reconnaissance</h2><p>In this process, you will directly interact with the computer system to gain information. This information can be relevant and accurate. But there is a risk of getting detected if you are planning active reconnaissance without permission. If you are detected, then system admin can take severe action against you and trail your subsequent activities.</p><h2>Passive Reconnaissance</h2><p>In this process, you will not be directly connected to a computer system. This process is used to gather essential information without ever interacting with the target systems.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps10" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Footprinting</h1>
+<div><div><div><div><div>Footprinting is a part of reconnaissance process which is used for gathering possible information about a target computer system or network. Footprinting could be both <strong>passive</strong> and <strong>active</strong>. Reviewing a company&rsquo;s website is an example of passive footprinting, whereas attempting to gain access to sensitive information through social engineering is an example of active information gathering.<p>Footprinting is basically the first step where hacker gathers as much information as possible to find ways to intrude into a target system or at least decide what type of attacks will be more suitable for the target.</p><p>During this phase, a hacker can collect the following information &minus;</p><ul><li>Domain name</li><li>IP Addresses</li><li>Namespaces</li><li>Employee information</li><li>Phone numbers</li><li>E-mails</li><li>Job Information</li></ul><p>In the following section, we will discuss how to extract the basic and easily accessible information about any computer system or network that is linked to the Internet.</p><h2>Domain Name Information</h2><p>You can use http://www.whois.com/whois website to get detailed information about a domain name information including its owner, its registrar, date of registration, expiry, name server, owner's contact information, etc.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/whois.jpg" alt="" /><p>Here is a sample record of www.tutorialspoint.com extracted from WHOIS Lookup &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/whois_record.jpg" alt="" /><h3>Quick Fix</h3><p>It's always recommended to keep your domain name profile a private one which should hide the above-mentioned information from potential hackers.</p><h2>Finding IP Address</h2><p>You can use <strong>ping</strong> command at your prompt. This command is available on Windows as well as on Linux OS. Following is the example to find out the IP address of tutorialspoint.com</p><pre>$ping tutorialspoint.com</pre><p>It will produce the following result &minus;</p><pre>PING tutorialspoint.com (66.135.33.172) 56(84) bytes of data.64 bytes from 66.135.33.172: icmp_seq = 1 ttl = 64 time = 0.028 ms64 bytes from 66.135.33.172: icmp_seq = 2 ttl = 64 time = 0.021 ms64 bytes from 66.135.33.172: icmp_seq = 3 ttl = 64 time = 0.021 ms64 bytes from 66.135.33.172: icmp_seq = 4 ttl = 64 time = 0.021 ms</pre><h2>Finding Hosting Company</h2><p>Once you have the website address, you can get further detail by using ip2location.com website. Following is the example to find out the details of an IP address &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/ip2location.jpg" alt="" /><p>Here the ISP row gives you the detail about the hosting company because IP addresses are usually provided by hosting companies only.</p><h3>Quick Fix</h3><p>If a computer system or network is linked with the Internet directly, then you cannot hide the IP address and the related information such as the hosting company, its location, ISP, etc. If you have a server containing very sensitive data, then it is recommended to keep it behind a secure proxy so that hackers cannot get the exact details of your actual server. This way, it will be difficult for any potential hacker to reach your server directly.</p><p>Another effective way of hiding your system IP and ultimately all the associated information is to go through a Virtual Private Network (VPN). If you configure a VPN, then the whole traffic routes through the VPN network, so your true IP address assigned by your ISP is always hidden.</p><h2>IP Address Ranges</h2><p>Small sites may have a single IP address associated with them, but larger websites usually have multiple IP addresses serving different domains and sub-domains.</p><p>You can obtain a range of IP addresses assigned to a particular company using American Registry for Internet Numbers (ARIN).</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/arin.jpg" alt="" /><p>You can enter company name in the highlighted search box to find out a list of all the assigned IP addresses to that company.</p><h2>History of the Website</h2><p>It is very easy to get a complete history of any website using www.archive.org.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/archive.jpg" alt="" /><p>You can enter a domain name in the search box to find out how the website was looking at a given point of time and what were the pages available on the website on different dates.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/archive_record.jpg" alt="" /><h3>Quick Fix</h3><p>Though there are some advantages of keeping your website in an archive database, but if you do not like anybody to see how your website progressed through different stages, then you can request archive.org to delete the history of your website.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps11" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Fingerprinting</h1>
+<div><div><div><div><div>The term OS fingerprinting in Ethical Hacking refers to any method used to determine what operating system is running on a remote computer. This could be &minus;<ul><li><p><strong>Active Fingerprinting</strong> &minus; Active fingerprinting is accomplished by sending specially crafted packets to a target machine and then noting down its response and analyzing the gathered information to determine the target OS. In the following section, we have given an example to explain how you can use NMAP tool to detect the OS of a target domain.</p></li><li><p><strong>Passive Fingerprinting</strong> &minus; Passive fingerprinting is based on sniffer traces from the remote system. Based on the sniffer traces (such as Wireshark) of the packets, you can determine the operating system of the remote host.</p></li></ul><p>We have the following four important elements that we will look at to determine the operating system &minus;</p><ul><li><p><strong>TTL</strong> &minus; What the operating system sets the <strong>Time-To-Live</strong> on the outbound packet.</p></li><li><p><strong>Window Size</strong> &minus; What the operating system sets the Window Size at.</p></li><li><p><strong>DF</strong> &minus; Does the operating system set the <strong>Don't Fragment</strong> bit.</p></li><li><p><strong>TOS</strong> &minus; Does the operating system set the <strong>Type of Service</strong>, and if so, at what.</p></li></ul><p>By analyzing these factors of a packet, you may be able to determine the remote operating system. This system is not 100% accurate, and works better for some operating systems than others.</p><h2>Basic Steps</h2><p>Before attacking a system, it is required that you know what operating system is hosting a website. Once a target OS is known, then it becomes easy to determine which vulnerabilities might be present to exploit the target system.</p><p>Below is a simple <strong>nmap</strong> command which can be used to identify the operating system serving a website and all the opened ports associated with the domain name, i.e., the IP address.</p><pre>$nmap -O -v tutorialspoint.com</pre><p>It will show you the following sensitive information about the given domain name or IP address &minus;</p><pre>Starting Nmap 5.51 ( http://nmap.org ) at 2015-10-04 09:57 CDTInitiating Parallel DNS resolution of 1 host. at 09:57Completed Parallel DNS resolution of 1 host. at 09:57, 0.00s elapsedInitiating SYN Stealth Scan at 09:57Scanning tutorialspoint.com (66.135.33.172) [1000 ports]Discovered open port 22/tcp on 66.135.33.172Discovered open port 3306/tcp on 66.135.33.172Discovered open port 80/tcp on 66.135.33.172Discovered open port 443/tcp on 66.135.33.172Completed SYN Stealth Scan at 09:57, 0.04s elapsed (1000 total ports)Initiating OS detection (try #1) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #2) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #3) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #4) against tutorialspoint.com (66.135.33.172)Retrying OS detection (try #5) against tutorialspoint.com (66.135.33.172)Nmap scan report for tutorialspoint.com (66.135.33.172)Host is up (0.000038s latency).Not shown: 996 closed portsPORT STATE SERVICE22/tcp open ssh80/tcp open http443/tcp open https3306/tcp open mysqlTCP/IP fingerprint:OS:SCAN(V=5.51%D=10/4%OT=22%CT=1%CU=40379%PV=N%DS=0%DC=L%G=Y%TM=56113E6D%P=OS:x86_64-redhat-linux-gnu)SEQ(SP=106%GCD=1%ISR=109%TI=Z%CI=Z%II=I%TS=A)OPSOS:(O1=MFFD7ST11NW7%O2=MFFD7ST11NW7%O3=MFFD7NNT11NW7%O4=MFFD7ST11NW7%O5=MFFOS:D7ST11NW7%O6=MFFD7ST11)WIN(W1=FFCB%W2=FFCB%W3=FFCB%W4=FFCB%W5=FFCB%W6=FFOS:CB)ECN(R=Y%DF=Y%T=40%W=FFD7%O=MFFD7NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%AOS:=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%OS:Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=OS:A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=OS:Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%OS:T=40%CD=S)</pre><p>If you do not have <strong>nmap</strong> command installed on your Linux system, then you can install it using the following <strong>yum</strong> command &minus;</p><pre>$yum install nmap</pre><p>You can go through <strong>nmap</strong> command in detail to check and understand the different features associated with a system and secure it against malicious attacks.</p><h3>Quick Fix</h3><p>You can hide your main system behind a secure proxy server or a VPN so that your complete identity is safe and ultimately your main system remains safe.</p><h2>Port Scanning</h2><p>We have just seen information given by <strong>nmap</strong> command. This command lists down all the open ports on a given server.</p><pre>PORT STATE SERVICE22/tcp open ssh80/tcp open http443/tcp open https3306/tcp open mysql</pre><p>You can also check if a particular port is opened or not using the following command &minus;</p><pre>$nmap -sT -p 443 tutorialspoint.com</pre><p>It will produce the following result &minus;</p><pre>Starting Nmap 5.51 ( http://nmap.org ) at 2015-10-04 10:19 CDTNmap scan report for tutorialspoint.com (66.135.33.172)Host is up (0.000067s latency).PORT STATE SERVICE443/tcp open httpsNmap done: 1 IP address (1 host up) scanned in 0.04 seconds</pre><p>Once a hacker knows about open ports, then he can plan different attack techniques through the open ports.</p><h3>Quick Fix</h3><p>It is always recommended to check and close all the unwanted ports to safeguard the system from malicious attacks.</p><h2>Ping Sweep</h2><p>A ping sweep is a network scanning technique that you can use to determine which IP address from a range of IP addresses map to live hosts. Ping Sweep is also known as <strong>ICMP sweep</strong>.</p><p>You can use <strong>fping</strong> command for ping sweep. This command is a ping-like program which uses the Internet Control Message Protocol (ICMP) echo request to determine if a host is up.</p><p><strong>fping</strong> is different from <strong>ping</strong> in that you can specify any number of hosts on the command line, or specify a file containing the lists of hosts to ping. If a host does not respond within a certain time limit and/or retry limit, it will be considered unreachable.</p><h3>Quick Fix</h3><p>To disable ping sweeps on a network, you can block ICMP ECHO requests from outside sources. This can be done using the following command which will create a firewall rule in <strong>iptable</strong>.</p><pre>$iptables -A OUTPUT -p icmp --icmp-type echo-request -j DROP</pre><h2>DNS Enumeration</h2><p>Domain Name Server (DNS) is like a map or an address book. In fact, it is like a distributed database which is used to translate an IP address 192.111.1.120 to a name www.example.com and vice versa.</p><p>DNS enumeration is the process of locating all the DNS servers and their corresponding records for an organization. The idea is to gather as much interesting details as possible about your target before initiating an attack.</p><p>You can use <strong>nslookup</strong> command available on Linux to get DNS and host-related information. In addition, you can use the following <strong>DNSenum</strong> script to get detailed information about a domain &minus;</p><p>DNSenum.pl</p><p><strong>DNSenum</strong> script can perform the following important operations &minus;</p><ul><li><p>Get the host's addresses</p></li><li><p>Get the nameservers</p></li><li><p>Get the MX record</p></li><li><p>Perform <strong>axfr</strong> queries on nameservers</p></li><li><p>Get extra names and subdomains via <strong>Google scraping</strong></p></li><li><p>Brute force subdomains from file can also perform recursion on subdomain that has NS records</p></li><li><p>Calculate C class domain network ranges and perform <strong>whois</strong> queries on them</p></li><li><p>Perform <strong>reverse lookups</strong> on <strong>netranges</strong></p></li></ul><h3>Quick Fix</h3><p>DNS Enumeration does not have a quick fix and it is really beyond the scope of this tutorial. Preventing DNS Enumeration is a big challenge.</p><p>If your DNS is not configured in a secure way, it is possible that lots of sensitive information about the network and organization can go outside and an untrusted Internet user can perform a DNS zone transfer.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps12" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Sniffing</h1>
+<div><div><div><div><div>Sniffing is the process of monitoring and capturing all the packets passing through a given network using sniffing tools. It is a form of &ldquo;tapping phone wires&rdquo; and get to know about the conversation. It is also called <strong>wiretapping</strong> applied to the computer networks.<p>There is so much possibility that if a set of enterprise switch ports is open, then one of their employees can sniff the whole traffic of the network. Anyone in the same physical location can plug into the network using Ethernet cable or connect wirelessly to that network and sniff the total traffic.</p><p>In other words, Sniffing allows you to see all sorts of traffic, both protected and unprotected. In the right conditions and with the right protocols in place, an attacking party may be able to gather information that can be used for further attacks or to cause other issues for the network or system owner.</p><h3>What can be sniffed?</h3><p>One can sniff the following sensitive information from a network &minus;</p><ul><li>Email traffic</li><li>FTP passwords</li><li>Web traffics</li><li>Telnet passwords</li><li>Router configuration</li><li>Chat sessions</li><li>DNS traffic</li></ul><h3>How it works</h3><p>A sniffer normally turns the NIC of the system to the <strong>promiscuous mode</strong> so that it listens to all the data transmitted on its segment.</p><p>Promiscuous mode refers to the unique way of Ethernet hardware, in particular, network interface cards (NICs), that allows an NIC to receive all traffic on the network, even if it is not addressed to this NIC. By default, a NIC ignores all traffic that is not addressed to it, which is done by comparing the destination address of the Ethernet packet with the hardware address (a.k.a. MAC) of the device. While this makes perfect sense for networking, non-promiscuous mode makes it difficult to use network monitoring and analysis software for diagnosing connectivity issues or traffic accounting.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/sniffing_networks.jpg" alt="" /><p>A sniffer can continuously monitor all the traffic to a computer through the NIC by decoding the information encapsulated in the data packets.</p><h2>Types of Sniffing</h2><p>Sniffing can be either Active or Passive in nature.</p><h3>Passive Sniffing</h3><p>In passive sniffing, the traffic is locked but it is not altered in any way. Passive sniffing allows listening only. It works with Hub devices. On a hub device, the traffic is sent to all the ports. In a network that uses hubs to connect systems, all hosts on the network can see the traffic. Therefore, an attacker can easily capture traffic going through.</p><p>The good news is that hubs are almost obsolete nowadays. Most modern networks use switches. Hence, passive sniffing is no more effective.</p><h3>Active Sniffing</h3><p>In active sniffing, the traffic is not only locked and monitored, but it may also be altered in some way as determined by the attack. Active sniffing is used to sniff a switch-based network. It involves injecting <strong>address resolution packets</strong> (ARP) into a target network to flood on the switch <strong>content addressable memory</strong> (CAM) table. CAM keeps track of which host is connected to which port.</p><p>Following are the Active Sniffing Techniques &minus;</p><ul><li>MAC Flooding</li><li>DHCP Attacks</li><li>DNS Poisoning</li><li>Spoofing Attacks</li><li>ARP Poisoning</li></ul><h3>Protocols which are affected</h3><p>Protocols such as the tried and true TCP/IP were never designed with security in mind and therefore do not offer much resistance to potential intruders. Several rules lend themselves to easy sniffing &minus;</p><ul><li><p><strong>HTTP</strong> &minus; It is used to send information in the clear text without any encryption and thus a real target.</p></li><li><p><strong>SMTP</strong> (Simple Mail Transfer Protocol) &minus; SMTP is basically utilized in the transfer of emails. This protocol is efficient, but it does not include any protection against sniffing.</p></li><li><p><strong>NNTP</strong> (Network News Transfer Protocol)&minus; It is used for all types of communications, but its main drawback is that data and even passwords are sent over the network as clear text.</p></li><li><p><strong>POP</strong> (Post Office Protocol) &minus; POP is strictly used to receive emails from the servers. This protocol does not include protection against sniffing because it can be trapped.</p></li><li><p><strong>FTP</strong> (File Transfer Protocol) &minus; FTP is used to send and receive files, but it does not offer any security features. All the data is sent as clear text that can be easily sniffed.</p></li><li><p><strong>IMAP</strong> (Internet Message Access Protocol) &minus; IMAP is same as SMTP in its functions, but it is highly vulnerable to sniffing.</p></li><li><p><strong>Telnet</strong> &minus; Telnet sends everything (usernames, passwords, keystrokes) over the network as clear text and hence, it can be easily sniffed.</p></li></ul><p>Sniffers are not the dumb utilities that allow you to view only live traffic. If you really want to analyze each packet, save the capture and review it whenever time allows.</p><h2>Hardware Protocol Analyzers</h2><p>Before we go into further details of sniffers, it is important that we discuss about <strong>hardware protocol analyzers</strong>. These devices plug into the network at the hardware level and can monitor traffic without manipulating it.</p><ul><li><p>Hardware protocol analyzers are used to monitor and identify malicious network traffic generated by hacking software installed in the system.</p></li><li><p>They capture a data packet, decode it, and analyze its content according to certain rules.</p></li><li><p>Hardware protocol analyzers allow attackers to see individual data bytes of each packet passing through the cable.</p></li></ul><p>These hardware devices are not readily available to most ethical hackers due to their enormous cost in many cases.</p><h2>Lawful Interception</h2><p>Lawful Interception (LI) is defined as legally sanctioned access to communications network data such as telephone calls or email messages. LI must always be in pursuance of a lawful authority for the purpose of analysis or evidence. Therefore, LI is a security process in which a network operator or service provider gives law enforcement officials permission to access private communications of individuals or organizations.</p><p>Almost all countries have drafted and enacted legislation to regulate lawful interception procedures; standardization groups are creating LI technology specifications. Usually, LI activities are taken for the purpose of infrastructure protection and cyber security. However, operators of private network infrastructures can maintain LI capabilities within their own networks as an inherent right, unless otherwise prohibited.</p><p>LI was formerly known as <strong>wiretapping</strong> and has existed since the inception of electronic communications.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps13" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Sniffing Tools</h1>
+<div><div><div><div><div>There are so many tools available to perform sniffing over a network, and they all have their own features to help a hacker analyze traffic and dissect the information. Sniffing tools are extremely common applications. We have listed here some of the interesting ones &minus;<ul><li><p><strong>BetterCAP</strong> &minus; BetterCAP is a powerful, flexible and portable tool created to perform various types of MITM attacks against a network, manipulate HTTP, HTTPS and TCP traffic in real-time, sniff for credentials, and much more.</p></li><li><p><strong>Ettercap</strong> &minus; Ettercap is a comprehensive suite for man-in-the-middle attacks. It features sniffing of live connections, content filtering on the fly and many other interesting tricks. It supports active and passive dissection of many protocols and includes many features for network and host analysis.</p></li><li><p><strong>Wireshark</strong> &minus; It is one of the most widely known and used packet sniffers. It offers a tremendous number of features designed to assist in the dissection and analysis of traffic.</p></li><li><p><strong>Tcpdump</strong> &minus; It is a well-known command-line packet analyzer. It provides the ability to intercept and observe TCP/IP and other packets during transmission over the network. Available at www.tcpdump.org.</p></li><li><p><strong>WinDump</strong> &minus; A Windows port of the popular Linux packet sniffer tcpdump, which is a command-line tool that is perfect for displaying header information.</p></li><li><p><strong>OmniPeek</strong> &minus; Manufactured by WildPackets, OmniPeek is a commercial product that is the evolution of the product EtherPeek.</p></li><li><p><strong>Dsniff</strong> &minus; A suite of tools designed to perform sniffing with different protocols with the intent of intercepting and revealing passwords. Dsniff is designed for Unix and Linux platforms and does not have a full equivalent on the Windows platform.</p></li><li><p><strong>EtherApe</strong> &minus; It is a Linux/Unix tool designed to display graphically a system's incoming and outgoing connections.</p></li><li><p><strong>MSN Sniffer</strong> &minus; It is a sniffing utility specifically designed for sniffing traffic generated by the MSN Messenger application.</p></li><li><p><strong>NetWitness NextGen</strong> &minus; It includes a hardware-based sniffer, along with other features, designed to monitor and analyze all traffic on a network. This tool is used by the FBI and other law enforcement agencies.</p></li></ul><p>A potential hacker can use any of these sniffing tools to analyze traffic on a network and dissect information.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps14" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>ARP Poisoning</h1>
+<div><div><div><div><div>Address Resolution Protocol (ARP) is a stateless protocol used for resolving IP addresses to machine MAC addresses. All network devices that need to communicate on the network broadcast ARP queries in the system to find out other machines&rsquo; MAC addresses. ARP Poisoning is also known as <strong>ARP Spoofing</strong>.<p>Here is how ARP works &minus;</p><ul><li><p>When one machine needs to communicate with another, it looks up its ARP table.</p></li><li><p>If the MAC address is not found in the table, the <strong>ARP_request</strong> is broadcasted over the network.</p></li><li><p>All machines on the network will compare this IP address to MAC address.</p></li><li><p>If one of the machines in the network identifies this address, then it will respond to the <strong>ARP_request</strong> with its IP and MAC address.</p></li><li><p>The requesting computer will store the address pair in its ARP table and communication will take place.</p></li></ul><h2>What is ARP Spoofing?</h2><p>ARP packets can be forged to send data to the attacker&rsquo;s machine.</p><ul><li><p>ARP spoofing constructs a large number of forged ARP request and reply packets to overload the switch.</p></li><li><p>The switch is set in <strong>forwarding mode</strong> and after the <strong>ARP table</strong> is flooded with spoofed ARP responses, the attackers can sniff all network packets.</p></li></ul><p>Attackers flood a target computer ARP cache with forged entries, which is also known as <strong>poisoning</strong>. ARP poisoning uses Man-in-the-Middle access to poison the network.</p><h2>What is MITM?</h2><p>The Man-in-the-Middle attack (abbreviated MITM, MitM, MIM, MiM, MITMA) implies an active attack where the adversary impersonates the user by creating a connection between the victims and sends messages between them. In this case, the victims think that they are communicating with each other, but in reality, the malicious actor controls the communication.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/third_person.jpg" alt="" /><p>A third person exists to control and monitor the traffic of communication between two parties. Some protocols such as <strong>SSL</strong> serve to prevent this type of attack.</p><h2>ARP Poisoning &minus; Exercise</h2><p>In this exercise, we have used <strong>BetterCAP</strong> to perform ARP poisoning in LAN environment using VMware workstation in which we have installed <strong>Kali</strong> Linux and <strong>Ettercap</strong> tool to sniff the local traffic in LAN.</p><p>For this exercise, you would need the following tools &minus;</p><ul><li>VMware workstation</li><li>Kali Linux or Linux Operating system</li><li>Ettercap Tool</li><li>LAN connection</li></ul><p><strong>Note</strong> &minus; This attack is possible in wired and wireless networks. You can perform this attack in local LAN.</p><p><strong>Step 1</strong> &minus; Install the VMware workstation and install the Kali Linux operating system.</p><p><strong>Step 2</strong> &minus; Login into the Kali Linux using username pass &ldquo;root, toor&rdquo;.</p><p><strong>Step 3</strong> &minus; Make sure you are connected to local LAN and check the IP address by typing the command <strong>ifconfig</strong> in the terminal.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/ifconfig.jpg" alt="" /><p><strong>Step 4</strong> &minus; Open up the terminal and type &ldquo;Ettercap &ndash;G&rdquo; to start the graphical version of Ettercap.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/ettercap.jpg" alt="" /><p><strong>Step 5</strong> &minus; Now click the tab &ldquo;sniff&rdquo; in the menu bar and select &ldquo;unified sniffing&rdquo; and click OK to select the interface. We are going to use &ldquo;eth0&rdquo; which means Ethernet connection.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/ettercap_input.jpg" alt="" /><p><strong>Step 6</strong> &minus; Now click the &ldquo;hosts&rdquo; tab in the menu bar and click &ldquo;scan for hosts&rdquo;. It will start scanning the whole network for the alive hosts.</p><p><strong>Step 7</strong> &minus; Next, click the &ldquo;hosts&rdquo; tab and select &ldquo;hosts list&rdquo; to see the number of hosts available in the network. This list also includes the default gateway address. We have to be careful when we select the targets.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/host_tab.jpg" alt="" /><p><strong>Step 8</strong> &minus; Now we have to choose the targets. In MITM, our target is the host machine, and the route will be the router address to forward the traffic. In an MITM attack, the attacker intercepts the network and sniffs the packets. So, we will add the victim as &ldquo;target 1&rdquo; and the router address as &ldquo;target 2.&rdquo;</p><p>In VMware environment, the default gateway will always end with &ldquo;2&rdquo; because &ldquo;1&rdquo; is assigned to the physical machine.</p><p><strong>Step 9</strong> &minus; In this scenario, our target is &ldquo;192.168.121.129&rdquo; and the router is &ldquo;192.168.121.2&rdquo;. So we will add target 1 as <strong>victim IP</strong> and target 2 as <strong>router IP</strong>.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/target.jpg" alt="" /><p><strong>Step 10</strong> &minus; Now click on &ldquo;MITM&rdquo; and click &ldquo;ARP poisoning&rdquo;. Thereafter, check the option &ldquo;Sniff remote connections&rdquo; and click OK.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/mitm_attack.jpg" alt="" /><p><strong>Step 11</strong> &minus; Click &ldquo;start&rdquo; and select &ldquo;start sniffing&rdquo;. This will start ARP poisoning in the network which means we have enabled our network card in &ldquo;promiscuous mode&rdquo; and now the local traffic can be sniffed.</p><p><strong>Note</strong> &minus; We have allowed only HTTP sniffing with Ettercap, so don&rsquo;t expect HTTPS packets to be sniffed with this process.</p><p><strong>Step 12</strong> &minus; Now it&rsquo;s time to see the results; if our victim logged into some websites. You can see the results in the toolbar of Ettercap.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/result.jpg" alt="" /><p>This is how sniffing works. You must have understood how easy it is to get the HTTP credentials just by enabling ARP poisoning.</p><p>ARP Poisoning has the potential to cause huge losses in company environments. This is the place where ethical hackers are appointed to secure the networks.</p><p>Like ARP poisoning, there are other attacks such as MAC flooding, MAC spoofing, DNS poisoning, ICMP poisoning, etc. that can cause significant loss to a network.</p><p>In the next chapter, we will discuss another type of attack known as <strong>DNS poisoning</strong>.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps15" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>DNS Poisoning</h1>
+<div><div><div><div><div>DNS Poisoning is a technique that tricks a DNS server into believing that it has received authentic information when, in reality, it has not. It results in the substitution of false IP address at the DNS level where web addresses are converted into numeric IP addresses. It allows an attacker to replace IP address entries for a target site on a given DNS server with IP address of the server controls. An attacker can create fake DNS entries for the server which may contain malicious content with the same name.<p>For instance, a user types www.google.com, but the user is sent to another fraud site instead of being directed to Google&rsquo;s servers. As we understand, DNS poisoning is used to redirect the users to fake pages which are managed by the attackers.</p><h2>DNS Poisoning &minus; Exercise</h2><p>Let&rsquo;s do an exercise on DNS poisoning using the same tool, <strong>Ettercap</strong>.</p><p>DNS Poisoning is quite similar to ARP Poisoning. To initiate DNS poisoning, you have to start with ARP poisoning, which we have already discussed in the previous chapter. We will use <strong>DNS spoof</strong> plugin which is already there in Ettercap.</p><p><strong>Step 1</strong> &minus; Open up the terminal and type &ldquo;nano etter.dns&rdquo;. This file contains all entries for DNS addresses which is used by Ettercap to resolve the domain name addresses. In this file, we will add a fake entry of &ldquo;Facebook&rdquo;. If someone wants to open Facebook, he will be redirected to another website.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/terminal.jpg" alt="" /><p><strong>Step 2</strong> &minus; Now insert the entries under the words &ldquo;Redirect it to www.linux.org&rdquo;. See the following example &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/redirect.jpg" alt="" /><p><strong>Step 3</strong> &minus; Now save this file and exit by saving the file. Use &ldquo;ctrl+x&rdquo; to save the file.</p><p><strong>Step 4</strong> &minus; After this, the whole process is same to start ARP poisoning. After starting ARP poisoning, click on &ldquo;plugins&rdquo; in the menu bar and select &ldquo;dns_spoof&rdquo; plugin.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/plugins.jpg" alt="" /><p><strong>Step 5</strong> &minus; After activating the DNS_spoof, you will see in the results that facebook.com will start spoofed to Google IP whenever someone types it in his browser.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/activating.jpg" alt="" /><p>It means the user gets the Google page instead of facebook.com on their browser.</p><p>In this exercise, we saw how network traffic can be sniffed through different tools and methods. Here a company needs an ethical hacker to provide network security to stop all these attacks. Let&rsquo;s see what an ethical hacker can do to prevent DNS Poisoning.</p><h2>Defenses against DNS Poisoning</h2><p>As an ethical hacker, your work could very likely put you in a position of prevention rather than pen testing. What you know as an attacker can help you prevent the very techniques you employ from the outside.</p><p>Here are defenses against the attacks we just covered from a pen tester&rsquo;s perspective &minus;</p><ul><li><p>Use a hardware-switched network for the most sensitive portions of your network in an effort to isolate traffic to a single segment or collision domain.</p></li><li><p>Implement IP DHCP Snooping on switches to prevent ARP poisoning and spoofing attacks.</p></li><li><p>Implement policies to prevent promiscuous mode on network adapters.</p></li><li><p>Be careful when deploying wireless access points, knowing that all traffic on the wireless network is subject to sniffing.</p></li><li><p>Encrypt your sensitive traffic using an encrypting protocol such as SSH or IPsec.</p></li><li><p>Port security is used by switches that have the ability to be programmed to allow only specific MAC addresses to send and receive data on each port.</p></li><li><p>IPv6 has security benefits and options that IPv4 does not have.</p></li><li><p>Replacing protocols such as FTP and Telnet with SSH is an effective defense against sniffing. If SSH is not a viable solution, consider protecting older legacy protocols with IPsec.</p></li><li><p>Virtual Private Networks (VPNs) can provide an effective defense against sniffing due to their encryption aspect.</p></li><li><p>SSL is a great defense along with IPsec.</p></li></ul><h3>Summary</h3><p>In this chapter, we discussed how attackers can capture and analyze all the traffic by placing a packet sniffer in a network. With a real-time example, we saw how easy it is to get the credentials of a victim from a given network. Attackers use MAC attacks, ARP and DNS poisoning attacks to sniff the network traffic and get hold of sensitive information such as email conversations and passwords.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps16" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Exploitation</h1>
+<div><div><div><div><div>Exploitation is a piece of programmed software or script which can allow hackers to take control over a system, exploiting its vulnerabilities. Hackers normally use vulnerability scanners like Nessus, Nexpose, OpenVAS, etc. to find these vulnerabilities.<p>Metasploit is a powerful tool to locate vulnerabilities in a system.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/metasploit.jpg" alt="" /><p>Based on the vulnerabilities, we find exploits. Here, we will discuss some of the best vulnerability search engines that you can use.</p><h2>Exploit Database</h2><p>www.exploit-db.com is the place where you can find all the exploits related to a vulnerability.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/exploit.jpg" alt="" /><h2>Common Vulnerabilities and Exposures</h2><p>Common Vulnerabilities and Exposures (CVE) is the standard for information security vulnerability names. CVE is a dictionary of publicly known information security vulnerabilities and exposures. It&rsquo;s free for public use. https://cve.mitre.org</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/cve.jpg" alt="" /><h2>National Vulnerability Database</h2><p>National Vulnerability Database (NVD) is the U.S. government repository of standards based vulnerability management data. This data enables automation of vulnerability management, security measurement, and compliance. You can locate this database at &minus; https://nvd.nist.gov</p><p>NVD includes databases of security checklists, security-related software flaws, misconfigurations, product names, and impact metrics.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/national_vulnerability.jpg" alt="" /><p>In general, you will see that there are two types of exploits &minus;</p><ul><li><p><strong>Remote Exploits</strong> &minus; These are the type of exploits where you don&rsquo;t have access to a remote system or network. Hackers use remote exploits to gain access to systems that are located at remote places.</p></li><li><p><strong>Local Exploits</strong> &minus; Local exploits are generally used by a system user having access to a local system, but who wants to overpass his rights.</p></li></ul><h2>Quick Fix</h2><p>Vulnerabilities generally arise due to missing updates, so it is recommended that you update your system on a regular basis, for example, once a week.</p><p>In Windows environment, you can activate automatic updates by using the options available in the Control Panel &rarr; System and Security &rarr; Windows Updates.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/windows_environment.jpg" alt="" /><p>In Linux Centos, you can use the following command to install automatic update package.</p><pre>yum -y install yum-cron</pre></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps17" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Enumeration</h1>
+<div><div><div><div><div>Enumeration belongs to the first phase of Ethical Hacking, i.e., &ldquo;Information Gathering&rdquo;. This is a process where the attacker establishes an active connection with the victim and try to discover as much attack vectors as possible, which can be used to exploit the systems further.<p>Enumeration can be used to gain information on &minus;</p><ul><li>Network shares</li><li>SNMP data, if they are not secured properly</li><li>IP tables</li><li>Usernames of different systems</li><li>Passwords policies lists</li></ul><p>Enumerations depend on the services that the systems offer. They can be &minus;</p><ul><li>DNS enumeration</li><li>NTP enumeration</li><li>SNMP enumeration</li><li>Linux/Windows enumeration</li><li>SMB enumeration</li></ul><p>Let us now discuss some of the tools that are widely used for Enumeration.</p><h2>NTP Suite</h2><p>NTP Suite is used for NTP enumeration. This is important because in a network environment, you can find other primary servers that help the hosts to update their times and you can do it without authenticating the system.</p><p>Take a look at the following example.</p><pre>ntpdate 192.168.1.100 01 Sept 12:50:49 ntpdate[627]:adjust time server 192.168.1.100 offset 0.005030 secorntpdc [-ilnps] [-c command] [hostname/IP_address]root@test]# ntpdc -c sysinfo 192.168.1.100***Warning changing to older implementation***Warning changing the request packet size from 160 to 48system peer: 192.168.1.101system peer mode: clientleap indicator: 00stratum: 5precision: -15root distance: 0.00107 sroot dispersion: 0.02306 sreference ID: [192.168.1.101]reference time: f66s4f45.f633e130, Sept 01 2016 22:06:23.458system flags: monitor ntp stats calibratejitter: 0.000000 sstability: 4.256 ppmbroadcastdelay: 0.003875 sauthdelay: 0.000107 s</pre><h2>enum4linux</h2><p>enum4linux is used to enumerate Linux systems. Take a look at the following screenshot and observe how we have found the usernames present in a target host.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/enum4linux.jpg" alt="" /><h2>smtp-user-enum</h2><p>smtp-user-enum tries to guess usernames by using SMTP service. Take a look at the following screenshot to understand how it does so.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/smtp.jpg" alt="" /><h2>Quick Fix</h2><p>It is recommended to disable all services that you don&rsquo;t use. It reduces the possibilities of OS enumeration of the services that your systems are running.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps18" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Metasploit</h1>
+<div><div><div><div><div>Metasploit is one of the most powerful exploit tools. Most of its resources can be found at: https://www.metasploit.com. It comes in two versions &minus; <strong>commercial</strong> and <strong>free edition</strong>. There are no major differences in the two versions, so in this tutorial, we will be mostly using the Community version (free) of Metasploit.<p>As an Ethical Hacker, you will be using &ldquo;Kali Distribution&rdquo; which has the Metasploit community version embedded in it along with other ethical hacking tools. But if you want to install Metasploit as a separate tool, you can easily do so on systems that run on Linux, Windows, or Mac OS X.</p><p>The hardware requirements to install Metasploit are &minus;</p><ul><li>2 GHz+ processor</li><li>1 GB RAM available</li><li>1 GB+ available disk space</li></ul><p>Matasploit can be used either with command prompt or with Web UI.</p><p>To open in Kali, go to Applications &rarr; Exploitation Tools &rarr; metasploit.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/exploitation_tools.jpg" alt="" /><p>After Metasploit starts, you will see the following screen. Highlighted in red underline is the version of Metasploit.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/highlighted_metaspolit.jpg" alt="" /><h2>Exploits of Metasploit</h2><p>From Vulnerability Scanner, we found that the Linux machine that we have for test is vulnerable to FTP service. Now, we will use the exploit that can work for us. The command is &minus;</p><pre>use &ldquo;exploit path&rdquo;</pre><p>The screen will appear as follows &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/exploit_path.jpg" alt="" /><p>Then type <strong>mfs&gt; show options</strong> in order to see what parameters you have to set in order to make it functional. As shown in the following screenshot, we have to set RHOST as the &ldquo;target IP&rdquo;.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/show_options.jpg" alt="" /><p>We type <strong>msf&gt; set RHOST 192.168.1.101 and msf&gt;set RPORT 21</strong></p><img src="https://www.tutorialspoint.com/ethical_hacking/images/set_report.jpg" alt="" /><p>Then, type <strong>mfs&gt;run</strong>. If the exploit is successful, then it will open one session that you can interact with, as shown in the following screenshot.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/open_session.jpg" alt="" /><h2>Metasploit Payloads</h2><p>Payload, in simple terms, are simple scripts that the hackers utilize to interact with a hacked system. Using payloads, they can transfer data to a victim system.</p><p>Metasploit payloads can be of three types &minus;</p><ul><li><p><strong>Singles</strong> &minus; Singles are very small and designed to create some kind of communication, then move to the next stage. For example, just creating a user.</p></li><li><p><strong>Staged</strong> &minus; It is a payload that an attacker can use to upload a bigger file onto a victim system.</p></li><li><p><strong>Stages</strong> &minus; Stages are payload components that are downloaded by Stagers modules. The various payload stages provide advanced features with no size limits such as Meterpreter and VNC Injection.</p></li></ul><h3>Payload Usage &minus; Example</h3><p>We use the command <strong>show payloads</strong>. With this exploit, we can see the payloads that we can use, and it will also show the payloads that will help us upload /execute files onto a victim system.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/payload.jpg" alt="" /> <img src="https://www.tutorialspoint.com/ethical_hacking/images/payload_usage.jpg" alt="" /><p>To set the payload that we want, we will use the following command &minus;</p><pre>set PAYLOAD payload/path</pre><p>Set the listen host and listen port (LHOST, LPORT) which are the <strong>attacker IP</strong> and <strong>port</strong>. Then set remote host and port (RPORT, LHOST) which are the <strong>victim IP</strong> and <strong>port</strong>.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/victim_ip.jpg" alt="" /><p>Type &ldquo;exploit&rdquo;. It will create a session as shown below &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/create_session.jpg" alt="" /><p>Now we can play with the system according to the settings that this payload offers.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps19" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Trojan Attacks</h1>
+<div><div><div><div><div>Trojans are non-replication programs; they don&rsquo;t reproduce their own codes by attaching themselves to other executable codes. They operate without the permissions or knowledge of the computer users.<p>Trojans hide themselves in healthy processes. However we should underline that Trojans infect outside machines only with the assistance of a computer user, like clicking a file that comes attached with email from an unknown person, plugging USB without scanning, opening unsafe URLs.</p><p>Trojans have several malicious functions &minus;</p><ul><li><p>They create backdoors to a system. Hackers can use these backdoors to access a victim system and its files. A hacker can use Trojans to edit and delete the files present on a victim system, or to observe the activities of the victim.</p></li><li><p>Trojans can steal all your financial data like bank accounts, transaction details, PayPal related information, etc. These are called <strong>Trojan-Banker</strong>.</p></li><li><p>Trojans can use the victim computer to attack other systems using Denial of Services.</p></li><li><p>Trojans can encrypt all your files and the hacker may thereafter demand money to decrypt them. These are <strong>Ransomware Trojans</strong>.</p></li><li><p>They can use your phones to send SMS to third parties. These are called <strong>SMS Trojans</strong>.</p></li></ul><h2>Trojan Information</h2><p>If you have found a virus and want to investigate further regarding its function, then we will recommend that you have a look at the following virus databases, which are offered generally by antivirus vendors.</p><ul><li><p><strong>Kaspersky Virus database</strong> &minus; https://www.kaspersky.com</p></li><li><p><strong>F-secure</strong> &minus; https://www.f-secure.com</p></li><li><p><strong>Symantec &ndash; Virus Encyclopedia</strong> &minus; https://www.symantec.com</p></li></ul><h2>Quick Tips</h2><ul><li><p>Install a good antivirus and keep it updated.</p></li><li><p>Don&rsquo;t open email attachments coming from unknown sources.</p></li><li><p>Don&rsquo;t accept invitation from unknown people in social media.</p></li><li><p>Don&rsquo;t open URLs sent by unknown people or URLs that are in weird form.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps20" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>TCP/IP Hijacking</h1>
+<div><div><div><div><div>TCP/IP Hijacking is when an authorized user gains access to a genuine network connection of another user. It is done in order to bypass the password authentication which is normally the start of a session.<p>In theory, a TCP/IP connection is established as shown below &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/tcp_ip.jpg" alt="" /><p>To hijack this connection, there are two possibilities &minus;</p><ul><li><p>Find the <strong>seq</strong> which is a number that increases by 1, but there is no chance to predict it.</p></li><li><p>The second possibility is to use the Man-in-the-Middle attack which, in simple words, is a type of <strong>network sniffing</strong>. For sniffing, we use tools like <strong>Wireshark</strong> or <strong>Ethercap</strong>.</p></li></ul><h2>Example</h2><p>An attacker monitors the data transmission over a network and discovers the IP&rsquo;s of two devices that participate in a connection.</p><p>When the hacker discovers the IP of one of the users, he can put down the connection of the other user by DoS attack and then resume communication by spoofing the IP of the disconnected user.</p><h2>Shijack</h2><p>In practice, one of the best TCP/IP hijack tools is Shijack. It is developed using Python language and you can download it from the following link &minus; https://packetstormsecurity.com/sniffers/shijack.tgz</p><p>Here is an example of a Shijack command &minus;</p><pre>root:/home/root/hijack# ./shijack eth0 192.168.0.100 53517 192.168.0.200 23</pre><img src="https://www.tutorialspoint.com/ethical_hacking/images/shijack.jpg" alt="" /><p>Here, we are trying to hijack a Telnet connection between the two hosts.</p><h2>Hunt</h2><p>Hunt is another popular tool that you can use to hijack a TCP/IP connection. It can be downloaded from &minus; https://packetstormsecurity.com/sniffers/hunt/</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/hunt.jpg" alt="" /><h2>Quick Tip</h2><p>All unencrypted sessions are vulnerable to TCP/IP session hijacking, so you should be using encrypted protocols as much as possible. Or, you should use double authentication techniques to keep the session secured.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps21" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Email Hijacking</h1>
+<div><div><div><div><div>Email Hijacking, or email hacking, is a widespread menace nowadays. It works by using the following three techniques which are email spoofing, social engineering tools, or inserting viruses in a user computer.<h2>Email Spoofing</h2><p>In email spoofing, the spammer sends emails from a known domain, so the receiver thinks that he knows this person and opens the mail. Such mails normally contain suspicious links, doubtful content, requests to transfer money, etc.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/example.jpg" alt="" /><h2>Social Engineering</h2><p>Spammers send promotional mails to different users, offering huge discount and tricking them to fill their personal data. You have tools available in Kali that can drive you to hijack an email.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/social_engineering.jpg" alt="" /><p>Email hacking can also be done by <strong>phishing techniques</strong>. See the following screenshot.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/phishing.jpg" alt="" /><p>The links in the email may install malware on the user&rsquo;s system or redirect the user to a malicious website and trick them into divulging personal and financial information, such as passwords, account IDs or credit card details.</p><p><strong>Phishing attacks</strong> are widely used by cybercriminals, as it is far easier to trick someone into clicking a malicious links in the email than trying to break through a computer&rsquo;s defenses.</p><h2>Inserting Viruses in a User System</h2><p>The third technique by which a hacker can hijack your email account is by infecting your system with a virus or any other kind of malware. With the help of a virus, a hacker can take all your passwords.</p><h3>How to detect if your email has been hijacked?</h3><ul><li><p>The recipients of spam emails include a bunch of people you know.</p></li><li><p>You try to access your account and the password no longer works.</p></li><li><p>You try to access the &ldquo;Forgot Password&rdquo; link and it does not go to the expected email.</p></li><li><p>Your Sent Items folder contains a bunch of spams you are not aware of sending.</p></li></ul><h3>Quick tips</h3><p>In case you think that your email got hijacked, then you need to take the following actions &minus;</p><ul><li><p>Change the passwords immediately.</p></li><li><p>Notify your friends not to open links that they receive from your email account.</p></li><li><p>Contact the authorities and report that your account has been hacked.</p></li><li><p>Install a good antivirus on your computer and update it.</p></li><li><p>Set up double authentication password if it is supported.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps22" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Password Hacking</h1>
+<div><div><div><div><div>We have passwords for emails, databases, computer systems, servers, bank accounts, and virtually everything that we want to protect. Passwords are in general the keys to get access into a system or an account.<p>In general, people tend to set passwords that are easy to remember, such as their date of birth, names of family members, mobile numbers, etc. This is what makes the passwords weak and prone to easy hacking.</p><p>One should always take care to have a strong password to defend their accounts from potential hackers. A strong password has the following attributes &minus;</p><ul><li><p>Contains at least 8 characters.</p></li><li><p>A mix of letters, numbers, and special characters.</p></li><li><p>A combination of small and capital letters.</p></li></ul><h2>Dictionary Attack</h2><p>In a dictionary attack, the hacker uses a predefined list of words from a dictionary to try and guess the password. If the set password is weak, then a dictionary attack can decode it quite fast.</p><p><strong>Hydra</strong> is a popular tool that is widely used for dictionary attacks. Take a look at the following screenshot and observe how we have used Hydra to find out the password of an FTP service.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/dictionary_attack.jpg" alt="" /><h2>Hybrid Dictionary Attack</h2><p>Hybrid dictionary attack uses a set of dictionary words combined with extensions. For example, we have the word &ldquo;admin&rdquo; and combine it with number extensions such as &ldquo;admin123&rdquo;, &ldquo;admin147&rdquo;, etc.</p><p><strong>Crunch</strong> is a wordlist generator where you can specify a standard character set or a character set. <strong>Crunch</strong> can generate all possible combinations and permutations. This tool comes bundled with the Kali distribution of Linux.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/hybrid_attack.jpg" alt="" /><h2>Brute-Force Attack</h2><p>In a brute-force attack, the hacker uses all possible combinations of letters, numbers, special characters, and small and capital letters to break the password. This type of attack has a high probability of success, but it requires an enormous amount of time to process all the combinations. A brute-force attack is slow and the hacker might require a system with high processing power to perform all those permutations and combinations faster.</p><p><strong>John the Ripper</strong> or <strong>Johnny</strong> is one of the powerful tools to set a brute-force attack and it comes bundled with the Kali distribution of Linux.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/brute_force.jpg" alt="" /><h2>Rainbow Tables</h2><p>A rainbow table contains a set of predefined passwords that are hashed. It is a lookup table used especially in recovering plain passwords from a cipher text. During the process of password recovery, it just looks at the pre-calculated hash table to crack the password. The tables can be downloaded from http://project-rainbowcrack.com/table.htm</p><p>RainbowCrack 1.6.1 is the tool to use the rainbow tables. It is available again in Kali distribution.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/rainbow_table.jpg" alt="" /><h3>Quick Tips</h3><ul><li><p>Don&rsquo;t note down the passwords anywhere, just memorize them.</p></li><li><p>Set strong passwords that are difficult to crack.</p></li><li><p>Use a combination of alphabets, digits, symbols, and capital and small letters.</p></li><li><p>Don&rsquo;t set passwords that are similar to their usernames.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps23" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Wireless Hacking</h1>
+<div><div><div><div><div>A wireless network is a set of two or more devices connected with each other via radio waves within a limited space range. The devices in a wireless network have the freedom to be in motion, but be in connection with the network and share data with other devices in the network. One of the most crucial point that they are so spread is that their installation cost is very cheap and fast than the wire networks.<p>Wireless networks are widely used and it is quite easy to set them up. They use IEEE 802.11 standards. A <strong>wireless router</strong> is the most important device in a wireless network that connects the users with the Internet.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/wireless_router.jpg" alt="" /><p>In a wireless network, we have <strong>Access Points</strong> which are extensions of wireless ranges that behave as logical switches.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/access_point.jpg" alt="" /><p>Although wireless networks offer great flexibility, they have their security problems. A hacker can sniff the network packets without having to be in the same building where the network is located. As wireless networks communicate through radio waves, a hacker can easily sniff the network from a nearby location.</p><p>Most attackers use network sniffing to find the SSID and hack a wireless network. When our wireless cards are converted in sniffing modes, they are called <strong>monitor mode</strong>.</p><h2>Kismet</h2><p>Kismet is a powerful tool for wireless sniffing that is found in Kali distribution. It can also be downloaded from its official webpage &minus; https://www.kismetwireless.net/index.shtml</p><p>Let&rsquo;s see how it works. First of all, open a terminal and type <strong>kismet</strong>. Start the Kismet Server and click Yes, as shown in the following screenshot.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/kismet.jpg" alt="" /><p>As shown here, click the Start button.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/start_button.jpg" alt="" /><p>Now, Kismet will start to capture data. The following screenshot shows how it would appear &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/capture_data.jpg" alt="" /><h2>NetStumbler</h2><p>NetStumbler is another tool for wireless hacking that is primarily meant for Windows systems. It can be downloaded from http://www.stumbler.net/</p><p>It is quite easy to use NetStumbler on your system. You just have to click the Scanning button and wait for the result, as shown in the following screenshot.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/scanning.jpg" alt="" /><p>It should display a screenshot as follows &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/network_stumbler.jpg" alt="" /><p>It is important to note that your card should support monitoring mode, otherwise you will fail to monitor.</p><h2>Wired Equivalent Privacy</h2><p>Wired Equivalent Privacy (WEP) is a security protocol that was invented to secure wireless networks and keep them private. It utilizes encryption at the data link layer which forbids unauthorized access to the network.</p><p>The key is used to encrypt the packets before transmission begins. An <strong>integrity check mechanism </strong>checks that the packets are not altered after transmission.</p><p>Note that WEP is not entirely immune to security problems. It suffers from the following issues &minus;</p><ul><li><p>CRC32 is not sufficient to ensure complete cryptographic integrity of a packet.</p></li><li><p>It is vulnerable to dictionary attacks.</p></li><li><p>WEP is vulnerable to Denial of Services attacks too.</p></li></ul><h3>WEPcrack</h3><p>WEPcrack is a popular tool to crack WEP passwords. It can be downloaded from &minus; https://sourceforge.net/projects/wepcrack/</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/wep_crack.jpg" alt="" /><h3>Aircrack-ng</h3><p>Aircrak-ng is another popular tool for cracking WEP passwords. It can be found in the Kali distribution of Linux.</p><p>The following screenshot shows how we have sniffed a wireless network and collected packets and created a file RHAWEP-01.cap. Then we run it with aircrack-ng to decrypt the cypher.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/air_crack.jpg" alt="" /><h2>Wireless DoS Attacks</h2><p>In a wireless environment, an attacker can attack a network from a distance and therefore, it is sometimes difficult to collect evidences against the attacker.</p><p>The first type of DoS is <strong>Physical Attack</strong>. This type of attack is very basic and it is in the base of radio interferences which can be created even from cordless phones that operate in 2.4 GHz range.</p><p>Another type is <strong>Network DoS Attack</strong>. As the Wireless Access Point creates a shared medium, it offers the possibility to flood the traffic of this medium toward the AP which will make its processing more slow toward the clients that attempt to connect. Such attacks can be created just by a <strong>ping flood DoS attack</strong>.</p><p>Pyloris is a popular DoS tool that you can download from &minus; https://sourceforge.net/projects/pyloris/</p><p>Low Orbit Ion Cannon (LOIC) is another popular tool for DoS attacks.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/dos_attacks.jpg" alt="" /><h3>Quick Tips</h3><p>To secure a wireless network, you should keep the following points in mind &minus;</p><ul><li>Change the SSID and the network password regularly.</li><li>Change the default password of access points.</li><li>Don&rsquo;t use WEP encryption.</li><li>Turn off guest networking.</li><li>Update the firmware of your wireless device.</li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps24" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Social Engineering</h1>
+<div><div><div><div><div>Let us try to understand the concept of Social Engineering attacks through some examples.<h2>Example 1</h2><p>You must have noticed old company documents being thrown into dustbins as garbage. These documents might contain sensitive information such as Names, Phone Numbers, Account Numbers, Social Security Numbers, Addresses, etc. Many companies still use carbon paper in their fax machines and once the roll is over, its carbon goes into dustbin which may have traces of sensitive data. Although it sounds improbable, but attackers can easily retrieve information from the company dumpsters by pilfering through the garbage.</p><h2>Example 2</h2><p>An attacker may befriend a company personnel and establish good relationship with him over a period of time. This relationship can be established online through social networks, chatting rooms, or offline at a coffee table, in a playground, or through any other means. The attacker takes the office personnel in confidence and finally digs out the required sensitive information without giving a clue.</p><h2>Example 3</h2><p>A social engineer may pretend to be an employee or a valid user or an VIP by faking an identification card or simply by convincing employees of his position in the company. Such an attacker can gain physical access to restricted areas, thus providing further opportunities for attacks.</p><h2>Example 4</h2><p>It happens in most of the cases that an attacker might be around you and can do <strong>shoulder surfing</strong> while you are typing sensitive information like user ID and password, account PIN, etc.</p><h2>Phishing Attack</h2><p>A phishing attack is a computer-based social engineering, where an attacker crafts an email that appears legitimate. Such emails have the same look and feel as those received from the original site, but they might contain links to fake websites. If you are not smart enough, then you will type your user ID and password and will try to login which will result in failure and by that time, the attacker will have your ID and password to attack your original account.</p><h2>Quick Fix</h2><ul><li><p>You should enforce a good security policy in your organization and conduct required trainings to make all the employees aware of the possible Social Engineering attacks and their consequences.</p></li><li><p>Document shredding should be a mandatory activity in your company.</p></li><li><p>Make double sure that any links that you receive in your email is coming from authentic sources and that they point to correct websites. Otherwise you might end up as a victim of Phishing.</p></li><li><p>Be professional and never share your ID and password with anybody else in any case.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps25" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>DDOS Attacks</h1>
+<div><div><div><div><div>A Distributed Denial of Service (DDoS) attack is an attempt to make an online service or a website unavailable by overloading it with huge floods of traffic generated from multiple sources.<p>Unlike a Denial of Service (DoS) attack, in which one computer and one Internet connection is used to flood a targeted resource with packets, a DDoS attack uses many computers and many Internet connections, often distributed globally in what is referred to as a <strong>botnet</strong>.</p><p>A large scale volumetric DDoS attack can generate a traffic measured in tens of Gigabits (and even hundreds of Gigabits) per second. We are sure your normal network will not be able to handle such traffic.</p><h2>What are Botnets?</h2><p>Attackers build a network of hacked machines which are known as <strong>botnets</strong>, by spreading malicious piece of code through emails, websites, and social media. Once these computers are infected, they can be controlled remotely, without their owners' knowledge, and used like an army to launch an attack against any target.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/ddos_system.jpg" alt="" /><p>A DDoS flood can be generated in multiple ways. For example &minus;</p><ul><li><p>Botnets can be used for sending more number of connection requests than a server can handle at a time.</p></li><li><p>Attackers can have computers send a victim resource huge amounts of random data to use up the target's bandwidth.</p></li></ul><p>Due to the distributed nature of these machines, they can be used to generate distributed high traffic which may be difficult to handle. It finally results in a complete blockage of a service.</p><h2>Types of DDoS Attacks</h2><p>DDoS attacks can be broadly categorized into three categories &minus;</p><ul><li>Volume-based Attacks</li><li>Protocol Attacks</li><li>Application Layer Attacks</li></ul><h3>Volume-Based Attacks</h3><p>Volume-based attacks include TCP floods, UDP floods, ICMP floods, and other spoofedpacket floods. These are also called <strong>Layer 3 &amp; 4 Attacks</strong>. Here, an attacker tries to saturate the bandwidth of the target site. The attack magnitude is measured in <strong>Bits per Second</strong> (bps).</p><ul><li><p><strong>UDP Flood</strong> &minus; A UDP flood is used to flood random ports on a remote host with numerous UDP packets, more specifically port number 53. Specialized firewalls can be used to filter out or block malicious UDP packets.</p></li><li><p><strong>ICMP Flood</strong> &minus; This is similar to UDP flood and used to flood a remote host with numerous ICMP Echo Requests. This type of attack can consume both outgoing and incoming bandwidth and a high volume of ping requests will result in overall system slowdown.</p></li><li><p><strong>HTTP Flood</strong> &minus; The attacker sends HTTP GET and POST requests to a targeted web server in a large volume which cannot be handled by the server and leads to denial of additional connections from legitimate clients.</p></li><li><p><strong>Amplification Attack</strong> &minus; The attacker makes a request that generates a large response which includes DNS requests for large TXT records and HTTP GET requests for large files like images, PDFs, or any other data files.</p></li></ul><h3>Protocol Attacks</h3><p>Protocol attacks include SYN floods, Ping of Death, fragmented packet attacks, Smurf DDoS, etc. This type of attack consumes actual server resources and other resources like firewalls and load balancers. The attack magnitude is measured in <strong>Packets per Second</strong>.</p><ul><li><p><strong>DNS Flood</strong> &minus; DNS floods are used for attacking both the infrastructure and a DNS application to overwhelm a target system and consume all its available network bandwidth.</p></li><li><p><strong>SYN Flood</strong> &minus; The attacker sends TCP connection requests faster than the targeted machine can process them, causing network saturation. Administrators can tweak TCP stacks to mitigate the effect of SYN floods. To reduce the effect of SYN floods, you can reduce the timeout until a stack frees memory allocated to a connection, or selectively dropping incoming connections using a firewall or <strong>iptables</strong>.</p></li><li><p><strong>Ping of Death</strong> &minus; The attacker sends malformed or oversized packets using a simple ping command. IP allows sending 65,535 bytes packets but sending a ping packet larger than 65,535 bytes violates the Internet Protocol and could cause memory overflow on the target system and finally crash the system. To avoid Ping of Death attacks and its variants, many sites block ICMP ping messages altogether at their firewalls.</p></li></ul><h3>Application Layer Attacks</h3><p>Application Layer Attacks include Slowloris, Zero-day DDoS attacks, DDoS attacks that target Apache, Windows or OpenBSD vulnerabilities and more. Here the goal is to crash the web server. The attack magnitude is measured in <strong>Requests per Second</strong>.</p><ul><li><p><strong>Application Attack</strong> &minus; This is also called <strong>Layer 7 Attack</strong>, where the attacker makes excessive log-in, database-lookup, or search requests to overload the application. It is really difficult to detect Layer 7 attacks because they resemble legitimate website traffic.</p></li><li><p><strong>Slowloris</strong> &minus; The attacker sends huge number of HTTP headers to a targeted web server, but never completes a request. The targeted server keeps each of these false connections open and eventually overflows the maximum concurrent connection pool, and leads to denial of additional connections from legitimate clients.</p></li><li><p><strong>NTP Amplification</strong> &minus; The attacker exploits publically-accessible Network Time Protocol (NTP) servers to overwhelm the targeted server with User Datagram Protocol (UDP) traffic.</p></li><li><p><strong>Zero-day DDoS Attacks</strong> &minus; A zero-day vulnerability is a system or application flaw previously unknown to the vendor, and has not been fixed or patched. These are new type of attacks coming into existence day by day, for example, exploiting vulnerabilities for which no patch has yet been released.</p></li></ul><h3>How to Fix a DDoS Attack</h3><p>There are quite a few DDoS protection options which you can apply depending on the type of DDoS attack.</p><p>Your DDoS protection starts from identifying and closing all the possible OS and application level vulnerabilities in your system, closing all the possible ports, removing unnecessary access from the system and hiding your server behind a proxy or CDN system.</p><p>If you see a low magnitude of the DDoS, then you can find many firewall-based solutions which can help you in filtering out DDoS based traffic. But if you have high volume of DDoS attack like in gigabits or even more, then you should take the help of a DDoS protection service provider that offers a more holistic, proactive and genuine approach.</p><p>You must be careful while approaching and selecting a DDoS protection service provider. There are number of service providers who want to take advantage of your situation. If you inform them that you are under DDoS attack, then they will start offering you a variety of services at unreasonably high costs.</p><p>We can suggest you a simple and working solution which starts with a search for a good DNS solution provider who is flexible enough to configure A and CNAME records for your website. Second, you will need a good CDN provider that can handle big DDoS traffic and provide you DDoS protection service as a part of their CDN package.</p><p>Assume your server IP address is AAA.BBB.CCC.DDD. Then you should do the following DNS configuration &minus;</p><ul><li><p>Create a <strong>A Record</strong> in DNS zone file as shown below with a DNS identifier, for example, <strong>ARECORDID</strong> and keep it secret from the outside world.</p></li><li><p>Now ask your CDN provider to link the created DNS identifier with a URL, something like <strong>cdn.someotherid.domain.com</strong>.</p></li><li><p>You will use the CDN URL cdn.someotherid.domain.com to create two CNAME records, the first one to point to <strong>www</strong> and the second record to point to @ as shown below.</p></li></ul><p>You can take the help from your system administrator to understand these points and configure your DNS and CDN appropriately. Finally, you will have the following configuration at your DNS.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/dns_configuration.jpg" alt="" /><p>Now, let the CDN provider handle all type of DDoS attacks and your system will remain safe. But here the condition is that you should not disclose your system's IP address or A record identifier to anyone; else direct attacks will start again.</p><h3>Quick Fix</h3><p>DDoS attacks have become more common than ever before, and unfortunately, there is no quick fix for this problem. However, if your system is under a DDoS attack, then don&rsquo;t panic and start looking into the matter step by step.</p></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps26" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Cross Site Scripting</h1>
+<div><div><div><div><div>Cross-site scripting (XSS) is a code injection attack that allows an attacker to execute malicious JavaScript in another user's browser.<p>The attacker does not directly target his victim. Instead, he exploits a vulnerability in a website that the victim visits, in order to get the website to deliver the malicious JavaScript for him. To the victim's browser, the malicious JavaScript appears to be a legitimate part of the website, and the website has thus acted as an unintentional accomplice to the attacker. These attacks can be carried out using HTML, JavaScript, VBScript, ActiveX, Flash, but the most used XSS is malicious JavaScript.</p><p>These attacks also can gather data from account hijacking, changing of user settings, cookie theft/poisoning, or false advertising and create DoS attacks.</p><h2>Example</h2><p>Let&rsquo;s take an example to understand how it works. We have a vulnerable webpage that we got by the <strong>metasploitable</strong> machine. Now we will test the field that is highlighted in red arrow for XSS.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/metasploitable.jpg" alt="" /><p>First of all, we make a simple alert script</p><pre>&lt;script&gt; alert(&lsquo;I am Vulnerable&rsquo;)&lt;/script&gt;</pre><p>It will produce the following output &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/simple_alert.jpg" alt="" /><h2>Types of XSS Attacks</h2><p>XSS attacks are often divided into three types &minus;</p><ul><li><p><strong>Persistent XSS,</strong> where the malicious string originates from the website's database.</p></li><li><p><strong>Reflected XSS,</strong> where the malicious string originates from the victim's request.</p></li><li><p><strong>DOM-based XSS,</strong> where the vulnerability is in the client-side code rather than the server-side code.</p></li></ul><p>Generally, cross-site scripting is found by <strong>vulnerability scanners</strong> so that you don&rsquo;t have to do all the manual job by putting a JavaScript on it like</p><pre>&lt;script&gt; alert('XSS')&lt;/script&gt;</pre><p><strong>Burp Suite</strong> and <strong>acunetix</strong> are considered as the best vulnerability scanners.</p><h2>Quick Tip</h2><p>To prevent XSS attacks, keep the following points in mind &minus;</p><ul><li><p>Check and validate all the form fields like hidden forms, headers, cookies, query strings.</p></li><li><p>Implement a stringent security policy. Set character limitation in the input fields.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps27" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>SQL Injection</h1>
+<div><div><div><div><div>SQL injection is a set of SQL commands that are placed in a URL string or in data structures in order to retrieve a response that we want from the databases that are connected with the web applications. This type of attacks generally takes place on webpages developed using PHP or ASP.NET.<p>An SQL injection attack can be done with the following intentions &minus;</p><ul><li><p>To dump the whole database of a system,</p></li><li><p>To modify the content of the databases, or</p></li><li><p>To perform different queries that are not allowed by the application.</p></li></ul><p>This type of attack works when the applications don&rsquo;t validate the inputs properly, before passing them to an SQL statement. Injections are normally placed put in address bars, search fields, or data fields.</p><p>The easiest way to detect if a web application is vulnerable to an SQL injection attack is to use the " &lsquo; " character in a string and see if you get any error.</p><h2>Example 1</h2><p>Let&rsquo;s try to understand this concept using a few examples. As shown in the following screenshot, we have used a " &lsquo; " character in the Name field.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/name_field.jpg" alt="" /><p>Now, click the <strong>Login</strong> button. It should produce the following response &minus;</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/login.jpg" alt="" /><p>It means that the &ldquo;Name&rdquo; field is vulnerable to SQL injection.</p><h2>Example 2</h2><p>We have this URL &minus; <strong>http://10.10.10.101/mutillidae/index.php?page=site-footer-xssdiscussion.php</strong></p><p>And we want to test the variable &ldquo;page&rdquo; but observe how we have injected a " &lsquo; " character in the string URL.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/variable_page.jpg" alt="" /><p>When we press Enter, it will produce the following result which is with errors.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/result_with_errors.jpg" alt="" /><h2>SQLMAP</h2><p>SQLMAP is one of the best tools available to detect SQL injections. It can be downloaded from http://sqlmap.org/</p><p>It comes pre-compiled in the Kali distribution. You can locate it at &minus; Applications &rarr; Database Assessment &rarr; Sqlmap.</p><p>After opening SQLMAP, we go to the page that we have the SQL injection and then get the header request. From the header, we run the following command in SQL &minus;</p><pre>./sqlmap.py --headers="User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:25.0)Gecko/20100101 Firefox/25.0" --cookie="security=low;PHPSESSID=oikbs8qcic2omf5gnd09kihsm7" -u 'http://localhost/dvwa/vulnerabilities/sqli_blind/?id=1&amp;Submit=Submit#' -level=5 risk=3 -p id --suffix="-BR" -v3</pre><p>The SQLMAP will test all the variables and the result will show that the parameter &ldquo;id&rdquo; is vulnerable, as shown in the following screenshot.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/sql_map.jpg" alt="" /><h2>SQLNinja</h2><p>SQLNinja is another SQL injection tool that is available in Kali distribution.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/sqlninja.jpg" alt="" /><h2>JSQL Injection</h2><p>JSQL Injection is in Java and it makes automated SQL injections.</p><img src="https://www.tutorialspoint.com/ethical_hacking/images/jsql_injection.jpg" alt="" /><h2>Quick Tips</h2><p>To prevent your web application from SQL injection attacks, you should keep the following points in mind &minus;</p><ul><li><p>Unchecked user-input to database should not be allowed to pass through the application GUI.</p></li><li><p>Every variable that passes into the application should be sanitized and validated.</p></li><li><p>The user input which is passed into the database should be quoted.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+
+<div data-role="page" id="eps28" data-theme="d">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		</div><div data-role="content"><div id="t">
+<h1>Pen Testing</h1>
+<div><div><div><div><div>Penetration Testing is a method that many companies follow in order to minimize their security breaches. This is a controlled way of hiring a professional who will try to hack your system and show you the loopholes that you should fix.<p>Before doing a penetration test, it is mandatory to have an agreement that will explicitly mention the following parameters &minus;</p><ul><li><p>what will be the time of penetration test,</p></li><li><p>where will be the IP source of the attack, and</p></li><li><p>what will be the penetration fields of the system.</p></li></ul><p>Penetration testing is conducted by professional ethical hackers who mainly use commercial, open-source tools, automate tools and manual checks. There are no restrictions; the most important objective here is to uncover as many security flaws as possible.</p><h2>Types of Penetration Testing</h2><p>We have five types of penetration testing &minus;</p><ul><li><p><strong>Black Box</strong> &minus; Here, the ethical hacker doesn&rsquo;t have any information regarding the infrastructure or the network of the organization that he is trying to penetrate. In black-box penetration testing, the hacker tries to find the information by his own means.</p></li><li><p><strong>Grey Box</strong> &minus; It is a type of penetration testing where the ethical hacker has a partial knowledge of the infrastructure, like its domain name server.</p></li><li><p><strong>White Box</strong> &minus; In white-box penetration testing, the ethical hacker is provided with all the necessary information about the infrastructure and the network of the organization that he needs to penetrate.</p></li><li><p><strong>External Penetration Testing</strong> &minus; This type of penetration testing mainly focuses on network infrastructure or servers and their software operating under the infrastructure. In this case, the ethical hacker tries the attack using public networks through the Internet. The hacker attempts to hack the company infrastructure by attacking their webpages, webservers, public DNS servers, etc.</p></li><li><p><strong>Internal Penetration Testing</strong> &minus; In this type of penetration testing, the ethical hacker is inside the network of the company and conducts his tests from there.</p></li></ul><p>Penetration testing can also cause problems such as system malfunctioning, system crashing, or data loss. Therefore, a company should take calculated risks before going ahead with penetration testing. The risk is calculated as follows and it is a management risk.</p><p><strong>RISK = Threat &times; Vulnerability</strong></p><h2>Example</h2><p>You have an online e-commerce website that is in production. You want to do a penetration testing before making it live. Here, you have to weigh the pros and cons first. If you go ahead with penetration testing, it might cause interruption of service. On the contrary, if you do not wish to perform a penetration testing, then you can run the risk of having an unpatched vulnerability that will remain as a threat all the time.</p><p>Before doing a penetration test, it is recommended that you put down the scope of the project in writing. You should be clear about what is going to be tested. For example &minus;</p><ul><li><p>Your company has a VPN or any other remote access techniques and you want to test that particular point.</p></li><li><p>Your application has webservers with databases, so you might want to get it tested for SQL injection attacks which is one of the most crucial tests on a webserver. In addition, you can check if your webserver is immune to DoS attacks.</p></li></ul><h2>Quick Tips</h2><p>Before going ahead with a penetration test, you should keep the following points in mind &minus;</p><ul><li><p>First understand your requirements and evaluate all the risks.</p></li><li><p>Hire a certified person to conduct penetration test because they are trained to apply all the possible methods and techniques to uncover possible loopholes in a network or web application.</p></li><li><p>Always sign an agreement before doing a penetration test.</p></li></ul></div></div></div></div></div>
+
+
+
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+		<a href="#pageone" data-rel="back" data-icon="home" data-iconpos="" data-shadow="true" data-iconshadow="true">Back</a>
+	</div>
+	</div> <!-- /page -->
+
+	
+	</body>
+</html>
